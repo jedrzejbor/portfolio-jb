@@ -1,28 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HamburgerMenu from './components/atoms/HamburgerMenu/HamburgerMenu';
+import GlobalStyle from './theme/GlobalStyle';
+import Head from './views/Head';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle/>
+      <h1>PORTFOLIO</h1>
+      <HamburgerMenu> </HamburgerMenu>
+      <Head/>
     </div>
   );
 }
