@@ -5,7 +5,7 @@ const HamburgerMenu = styled.span`
   height: 5px;
   width: 30px;
   border-radius: 5px;
-  background-color: black;
+  background-color: #9815FF;
 
   &::before {
   content:"";
@@ -13,7 +13,7 @@ const HamburgerMenu = styled.span`
   height: 5px;
   width: 30px;
   border-radius: 5px;
-  background-color: black;
+  background-color: #9815FF;
   transform: translateY(-10px);
   }
   &::after {
@@ -22,7 +22,7 @@ const HamburgerMenu = styled.span`
   height: 5px;
   width: 30px;
   border-radius: 5px;
-  background-color: black;
+  background-color: #9815FF;
   transform: translateY(5px);
   }
 `;

@@ -1,15 +1,16 @@
 import React from 'react';
-import HamburgerMenu from './components/atoms/HamburgerMenu/HamburgerMenu';
 import GlobalStyle from './theme/GlobalStyle';
-import Head from './views/Head';
+import Main from './views/Main';
+
 
 function App() {
+ 
   return (
     <div className="App">
       <GlobalStyle/>
-      <h1>PORTFOLIO</h1>
-      <HamburgerMenu> </HamburgerMenu>
-      <Head/>
+      <Main/>
+     
+      
     </div>
   );
 }
