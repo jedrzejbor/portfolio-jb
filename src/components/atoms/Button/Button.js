@@ -8,6 +8,7 @@ const Button = styled.button `
   background-color: transparent;
   color: #9815FF;
   transition: .3s;
+  font-weight:bold;
 
   &:hover {
     background-color: #9815FF;

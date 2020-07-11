@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import HamburgerMenu from '../components/atoms/HamburgerMenu/HamburgerMenu';
 import Head from './Head';
+import About from './About'
 
 const Main = () => {
   const Wrapper = styled.div `
@@ -14,7 +15,7 @@ const Main = () => {
   height:45px;
   width:100vw;
   background-color: rgba(255,255,255,0.9);
-  box-shadow: 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 1px 3px 4px 0px rgba(0,0,0,0.2);
   `
   const HamburgerButton = styled(HamburgerMenu)`
   position: fixed;
@@ -28,6 +29,7 @@ const Main = () => {
     <HamburgerButton> </HamburgerButton> 
     </HamburgerWrapper>
     <Head/>
+    <About/>
   </Wrapper>
   );
 }
