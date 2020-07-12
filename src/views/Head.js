@@ -8,7 +8,7 @@ const Head = () => {
   const Wrapper = styled.div`
   height:100vh;
   width: 100vw;
-  /* background-color:red; */
+  background-color:red;
   `;
   const TextWrapper = styled.div`
     height:50vh;
