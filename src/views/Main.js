@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import HamburgerMenu from '../components/atoms/HamburgerMenu/HamburgerMenu';
 import Head from './Head';
-import About from './About'
+import About from './About';
+import Project from './Project';
 
 const Main = () => {
   const Wrapper = styled.div `
@@ -30,6 +31,7 @@ const Main = () => {
     </HamburgerWrapper>
     <Head/>
     <About/>
+    <Project/>
   </Wrapper>
   );
 }

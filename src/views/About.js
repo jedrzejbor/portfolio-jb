@@ -18,6 +18,9 @@ const About = () => {
 
   const Text = styled.p`
     padding: 20px 0;
+    text-align:center;
+    font-size: 1.6rem;
+    font-weight: 500;
   `;
 
   const ButtonProjects = styled(Button)`
