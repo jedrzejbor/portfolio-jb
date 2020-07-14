@@ -13,6 +13,7 @@ const WrapperTitle = styled.div`
   height:50vh;
   width: 75vw;
   margin: 0 auto;
+  padding-top:100px; 
 `;
 
 const WrapperProject = styled.div`
@@ -56,7 +57,6 @@ const GithubWrapper = styled.div`
   text-decoration:none;
  `;
  
-
  const Line = styled.span`
   display:inline-block;
   height:60px;
@@ -64,6 +64,12 @@ const GithubWrapper = styled.div`
   background-color: #000;
   transform: translateY(5px);
  `;
+
+  const ButtonContact = styled(Button)`
+  display:block;
+    margin: 0 auto;
+    margin-top: 30px;
+  `;
 
 const Project = () => {
   return ( 
@@ -80,7 +86,7 @@ const Project = () => {
       <TextBig>Github</TextBig>
       <Link href='https://github.com/jedrzejbor'>Link</Link>
       </GithubWrapper>
-      <Button>Contact</Button>
+      <ButtonContact>Contact</ButtonContact>
       </WrapperTitle>
       <WrapperProject>
         <ProjectImage src={projectView}/>
