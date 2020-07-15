@@ -24,7 +24,7 @@ const WrapperProject = styled.div`
 
 const ProjectImage = styled.img`
   height:270px;
-  width: 230px;
+  width: 270px;
 `;
 const ProjectName = styled.h3`
   font-size: 2rem;
@@ -71,6 +71,14 @@ const GithubWrapper = styled.div`
     margin-top: 30px;
   `;
 
+  const ButtonProject = styled.button`
+    height:30px;
+    width:40px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius:15px;
+  `;
+
 const Project = () => {
   return ( 
     <Wrapper>
@@ -80,6 +88,8 @@ const Project = () => {
       <TechnologiesWrapper>
       <TextBig>Technologies</TextBig>
       <TextLow>React, OpenWeatherApi</TextLow>
+      <ButtonProject>L</ButtonProject>
+      <ButtonProject>P</ButtonProject>
       </TechnologiesWrapper>
       <Line/>
       <GithubWrapper>
