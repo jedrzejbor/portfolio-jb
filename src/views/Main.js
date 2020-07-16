@@ -4,6 +4,7 @@ import HamburgerMenu from '../components/atoms/HamburgerMenu/HamburgerMenu';
 import Head from './Head';
 import About from './About';
 import Project from './Project';
+import Contact from './Contact';
 
 const Main = () => {
   const Wrapper = styled.div `
@@ -32,6 +33,7 @@ const Main = () => {
     <Head/>
     <About/>
     <Project/>
+    <Contact/>
   </Wrapper>
   );
 }

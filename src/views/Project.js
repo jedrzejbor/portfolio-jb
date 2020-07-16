@@ -88,8 +88,8 @@ const Project = () => {
       <TechnologiesWrapper>
       <TextBig>Technologies</TextBig>
       <TextLow>React, OpenWeatherApi</TextLow>
-      <ButtonProject>L</ButtonProject>
-      <ButtonProject>P</ButtonProject>
+      <ButtonProject>D-</ButtonProject>
+      <ButtonProject>-D</ButtonProject>
       </TechnologiesWrapper>
       <Line/>
       <GithubWrapper>
