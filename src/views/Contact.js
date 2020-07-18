@@ -8,12 +8,12 @@ const Wrapper = styled.div`
 `;
 
 const Contact = () => {
-
   return (
     <Wrapper>
       <TopicTitle>Contact</TopicTitle>
+      <h3>Email: jedrzej.borakiewicz@gmail.com</h3>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default Contact;
