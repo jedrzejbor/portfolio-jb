@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
+import ManHandUp from '../images/man_hand_up.png';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -12,18 +13,41 @@ const WrapperText = styled.div`
   height: 50vh;
   width: 75vw;
   margin: 0 auto;
+  padding-top: 100px;
 `;
 
 const GrayText = styled.p`
   color: #828282;
   font-weight: lighter;
   font-size: 1.6rem;
-  padding: 5px 0;
+  padding: 5px 0 10px 0;
 `;
 
 const ButtonCv = styled(Button)`
   display: block;
   margin: 20px auto;
+`;
+
+const WrapperImage = styled.div`
+  position: relative;
+  height: 50vh;
+  width: 75vw;
+  margin: 0 auto;
+  /* background-color: red; */
+`;
+
+const ContactImage = styled.img`
+  height: 250px;
+  width: 250px;
+  margin-top: 100px;
+`;
+
+const Creator = styled.p`
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 0.8rem;
+  color: #828282;
 `;
 
 const Contact = () => {
@@ -39,6 +63,10 @@ const Contact = () => {
         <GrayText>Jędrzej Borakiewicz</GrayText>
         <ButtonCv>DOWNLOAD CV</ButtonCv>
       </WrapperText>
+      <WrapperImage>
+        <ContactImage src={ManHandUp} />
+        <Creator>2020 BORAKIEWICZ</Creator>
+      </WrapperImage>
     </Wrapper>
   );
 };
