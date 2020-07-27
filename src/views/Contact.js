@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
 import ManHandUp from '../images/man_hand_up.png';
+import BgcBlue from '../images/Background_contact.png';
 
 const Wrapper = styled.div`
+  /* position: relative; */
   height: 100vh;
   width: 100vw;
 `;
@@ -33,12 +35,11 @@ const WrapperImage = styled.div`
   height: 50vh;
   width: 75vw;
   margin: 0 auto;
-  /* background-color: red; */
 `;
 
 const ContactImage = styled.img`
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   margin-top: 100px;
 `;
 
@@ -48,6 +49,15 @@ const Creator = styled.p`
   right: 20px;
   font-size: 0.8rem;
   color: #828282;
+`;
+
+const BackgroundContact = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: -12.5vw;
+  height: 100%;
+  width: 95vw;
+  z-index: -1;
 `;
 
 const Contact = () => {
@@ -66,6 +76,7 @@ const Contact = () => {
       <WrapperImage>
         <ContactImage src={ManHandUp} />
         <Creator>2020 BORAKIEWICZ</Creator>
+        <BackgroundContact src={BgcBlue} />
       </WrapperImage>
     </Wrapper>
   );
