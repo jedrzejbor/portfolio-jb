@@ -35,6 +35,8 @@ const WrapperImage = styled.div`
   height: 50vh;
   width: 75vw;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
 `;
 
 const ContactImage = styled.img`

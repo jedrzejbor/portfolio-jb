@@ -5,6 +5,8 @@ import Head from './Head';
 import About from './About';
 import Project from './Project';
 import Contact from './Contact';
+import Linkedin from '../images/linkedin.png';
+import Github from '../images/github.png';
 
 const Main = () => {
   const Wrapper = styled.div`
@@ -39,8 +41,31 @@ const Main = () => {
     color: #9815ff;
   `;
 
+  const LinkedinLogo = styled.a`
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    height: 20px;
+    width: 20px;
+    background-image: url(${Linkedin});
+    background-repeat: no-repeat;
+    background-size: 20px;
+  `;
+  const GithubLogo = styled.a`
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    height: 20px;
+    width: 20px;
+    background-image: url(${Github});
+    background-repeat: no-repeat;
+    background-size: 20px;
+  `;
+
   return (
     <Wrapper>
+      <LinkedinLogo />
+      <GithubLogo />
       <HamburgerWrapper>
         <HamburgerLogo>
           <BlueLogo>JEDRZEJ</BlueLogo> BORAKIEWICZ
