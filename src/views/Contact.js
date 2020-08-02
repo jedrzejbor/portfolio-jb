@@ -57,7 +57,7 @@ const BackgroundContact = styled.img`
   position: absolute;
   bottom: 0;
   left: -12.5vw;
-  height: 100%;
+  height: 110%;
   width: 95vw;
   z-index: -1;
 `;
