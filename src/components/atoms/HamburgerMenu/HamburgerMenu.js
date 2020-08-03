@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-const HamburgerMenu = styled.span`
+const HamburgerMenu = styled.span `
   display: block;
   height: 5px;
   width: 30px;
   border-radius: 5px;
   background-color: #9815FF;
+  cursor:pointer;
 
   &::before {
   content:"";

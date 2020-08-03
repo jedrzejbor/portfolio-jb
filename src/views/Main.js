@@ -36,6 +36,7 @@ const Main = () => {
     position: fixed;
     top: 20px;
     right: 20px;
+    background-color: red;
   `;
   const BlueLogo = styled.span`
     color: #9815ff;
