@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import HamburgerMenu from '../components/atoms/HamburgerMenu/HamburgerMenu';
+import MobileMenu from '../components/organisms/MobileMenu/MobileMenu';
 import Head from './Head';
 import About from './About';
 import Project from './Project';
@@ -32,12 +32,7 @@ const Main = () => {
     font-size: 0.9rem;
     z-index: 100;
   `;
-  const HamburgerButton = styled(HamburgerMenu)`
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: red;
-  `;
+
   const BlueLogo = styled.span`
     color: #9815ff;
   `;
@@ -71,7 +66,7 @@ const Main = () => {
         <HamburgerLogo>
           <BlueLogo>JEDRZEJ</BlueLogo> BORAKIEWICZ
         </HamburgerLogo>
-        <HamburgerButton> </HamburgerButton>
+        <MobileMenu />
       </HamburgerWrapper>
       <Head />
       <About />
