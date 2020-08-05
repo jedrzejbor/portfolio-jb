@@ -30,7 +30,7 @@ const Main = () => {
     left: 20px;
     font-weight: bold;
     font-size: 0.9rem;
-    z-index: 100;
+    /* z-index: 100; */
   `;
 
   const BlueLogo = styled.span`
