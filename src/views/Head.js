@@ -13,9 +13,9 @@ const Head = () => {
   `;
   const BackgroundHead = styled.img`
     position: absolute;
-    top: 20vh;
+    bottom: 0;
     right: -10px;
-    height: 81vh;
+    height: 65vh;
     width: 95vw;
     z-index: -1;
   `;
@@ -43,11 +43,13 @@ const Head = () => {
     width: 75vw;
     margin: 0 auto;
     padding-top: 40px;
+    display: flex;
+    align-items: center;
   `;
   const ImageMan = styled.img`
     display: block;
-    height: 300px;
-    width: 150px;
+    height: 30vh;
+    width: 30vw;
     margin: 0 auto;
   `;
   return (

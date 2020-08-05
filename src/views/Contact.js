@@ -15,19 +15,23 @@ const WrapperText = styled.div`
   height: 50vh;
   width: 75vw;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 50px;
+`;
+
+const TopicContact = styled.h3`
+  font-size: 1.5rem;
 `;
 
 const GrayText = styled.p`
   color: #828282;
   font-weight: lighter;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   padding: 5px 0 10px 0;
 `;
 
 const ButtonCv = styled(Button)`
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
 `;
 
 const WrapperImage = styled.div`
@@ -37,18 +41,18 @@ const WrapperImage = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const ContactImage = styled.img`
-  height: 200px;
-  width: 200px;
-  margin-top: 100px;
+  height: 30vh;
+  width: 30vw;
 `;
 
 const Creator = styled.p`
   position: absolute;
   bottom: 20px;
-  right: 20px;
+  right: -5vw;
   font-size: 0.8rem;
   color: #828282;
 `;
@@ -57,7 +61,7 @@ const BackgroundContact = styled.img`
   position: absolute;
   bottom: 0;
   left: -12.5vw;
-  height: 110%;
+  height: 55vh;
   width: 95vw;
   z-index: -1;
 `;
@@ -67,11 +71,11 @@ const Contact = () => {
     <Wrapper>
       <WrapperText>
         <TopicTitle>Contact</TopicTitle>
-        <h3>EMAIL</h3>
+        <TopicContact>EMAIL</TopicContact>
         <GrayText>jedrzej.borakiewicz@gmail.com</GrayText>
-        <h3>GITHUB</h3>
+        <TopicContact>GITHUB</TopicContact>
         <GrayText>jedbor</GrayText>
-        <h3>LINKEDIN</h3>
+        <TopicContact>LINKEDIN</TopicContact>
         <GrayText>Jędrzej Borakiewicz</GrayText>
         <ButtonCv>DOWNLOAD CV</ButtonCv>
       </WrapperText>

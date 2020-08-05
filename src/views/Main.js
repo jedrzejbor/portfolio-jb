@@ -40,7 +40,7 @@ const Main = () => {
   const LinkedinLogo = styled.a`
     position: fixed;
     bottom: 50px;
-    left: 20px;
+    left: 10px;
     height: 20px;
     width: 20px;
     background-image: url(${Linkedin});
@@ -50,7 +50,7 @@ const Main = () => {
   const GithubLogo = styled.a`
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    left: 10px;
     height: 20px;
     width: 20px;
     background-image: url(${Github});
