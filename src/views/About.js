@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import manStanding from '../images/Man_simple.png';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
+import { device } from '../theme/deviceSize';
 
 const About = () => {
   const Wrapper = styled.div`
@@ -15,12 +16,20 @@ const About = () => {
     margin: 0 auto;
     padding-top: 100px;
   `;
+  const Title = styled(TopicTitle)`
+    @media ${device.mobileM} {
+      font-size: 4rem;
+    }
+  `;
 
   const Text = styled.p`
     padding: 20px 0;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
+    @media ${device.mobileM} {
+      font-size: 1.5rem;
+    }
   `;
 
   const ButtonProjects = styled(Button)`
@@ -40,12 +49,16 @@ const About = () => {
     height: 30vh;
     width: 30vw;
     margin: 0 auto;
+    @media ${device.mobileM} {
+      height: 32vh;
+      width: 32vw;
+    }
   `;
 
   return (
     <Wrapper>
       <WrapperText>
-        <TopicTitle>About</TopicTitle>
+        <Title>About</Title>
         <Text>
           Hi, I am 22 years old student of informatics specialization front-end developer. My hobby
           is programing, car and race. In my projects I use HTML, CSS, JS, React and I started learn

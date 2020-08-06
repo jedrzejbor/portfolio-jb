@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import Button from '../components/atoms/Button/Button';
 import manworking from '../images/man_working.png';
 import BgcBlue from '../images/Background_main.png';
+import { device } from '../theme/deviceSize';
 
 const Head = () => {
   const Wrapper = styled.div`
     position: relative;
     height: 100vh;
     width: 100vw;
-    /* background-color:red; */
   `;
   const BackgroundHead = styled.img`
     position: absolute;
@@ -27,6 +27,10 @@ const Head = () => {
   const TextHead = styled.h1`
     padding-top: 100px;
     font-size: 2.5rem;
+
+    @media ${device.mobileM} {
+      font-size: 3rem;
+    }
   `;
   const Square = styled.span`
     display: inline-block;
@@ -51,6 +55,10 @@ const Head = () => {
     height: 30vh;
     width: 30vw;
     margin: 0 auto;
+    @media ${device.mobileM} {
+      height: 32vh;
+      width: 32vw;
+    }
   `;
   return (
     <Wrapper>

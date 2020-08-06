@@ -91,7 +91,7 @@ const ButtonProject = styled.button`
   background-color: white;
   border: 1px solid black;
   border-radius: 15px;
-  margin: 10px 0;
+  margin: 10px 10px;
 `;
 
 const Project = () => {
