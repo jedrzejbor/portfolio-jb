@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from '../components/atoms/Button/Button';
 import projectView from '../images/project.png';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
+import { device } from '../theme/deviceSize';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -31,6 +32,9 @@ const ProjectImage = styled.img`
 `;
 const ProjectName = styled.h3`
   font-size: 1.8rem;
+  @media ${device.mobileM} {
+    font-size: 2rem;
+  }
 `;
 
 const WrapperTechnologiesGithub = styled.div`
@@ -55,14 +59,23 @@ const TextBig = styled.p`
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 20px;
+  @media ${device.mobileM} {
+    font-size: 1.5rem;
+  }
 `;
 const TextLow = styled.p`
   font-size: 1.1rem;
+  @media ${device.mobileM} {
+    font-size: 1.3rem;
+  }
 `;
 const Link = styled.a`
   font-size: 1.1rem;
   color: black;
   text-decoration: none;
+  @media ${device.mobileM} {
+    font-size: 1.3rem;
+  }
 `;
 
 const Line = styled.span`
@@ -76,7 +89,9 @@ const Line = styled.span`
 const ButtonContact = styled(Button)`
   display: block;
   margin: 0 auto;
-  /* margin-top: 20px; */
+  @media ${device.mobileM} {
+    margin-top: 20px;
+  }
 `;
 
 const WrapperButtonProject = styled.div`
@@ -92,6 +107,9 @@ const ButtonProject = styled.button`
   border: 1px solid black;
   border-radius: 15px;
   margin: 10px 10px;
+  @media ${device.mobileM} {
+    margin-top: 20px;
+  }
 `;
 
 const Project = () => {
