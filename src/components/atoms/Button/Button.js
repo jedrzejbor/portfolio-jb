@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import {
+  device
+} from '../../../theme/deviceSize';
 
 const Button = styled.button `
   border: 1px solid #9815FF;
@@ -14,6 +17,12 @@ const Button = styled.button `
     background-color: #9815FF;
     color: #FFF;
   }
+
+  @media ${device.tablet} {
+      height: 50px;
+      width: 250px;
+      font-size:2rem;
+    }
 `;
 
 

@@ -18,6 +18,9 @@ const Head = () => {
     height: 65vh;
     width: 95vw;
     z-index: -1;
+    @media ${device.tablet} {
+      height: 80vh;
+    }
   `;
   const TextWrapper = styled.div`
     height: 50vh;
@@ -30,6 +33,9 @@ const Head = () => {
 
     @media ${device.mobileM} {
       font-size: 3rem;
+    }
+    @media ${device.tablet} {
+      font-size: 4rem;
     }
   `;
   const Square = styled.span`
@@ -58,6 +64,10 @@ const Head = () => {
     @media ${device.mobileM} {
       height: 32vh;
       width: 32vw;
+    }
+    @media ${device.tablet} {
+      height: 36vh;
+      width: 36vw;
     }
   `;
   return (
