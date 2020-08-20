@@ -4,6 +4,7 @@ import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
 import ManHandUp from '../images/man_hand_up.png';
 import BgcBlue from '../images/Background_contact.png';
+import { device } from '../theme/deviceSize';
 
 const Wrapper = styled.div`
   /* position: relative; */
@@ -20,6 +21,9 @@ const WrapperText = styled.div`
 
 const TopicContact = styled.h3`
   font-size: 1.5rem;
+  @media ${device.tablet} {
+    font-size: 2.5rem;
+  }
 `;
 
 const GrayText = styled.p`
@@ -27,11 +31,17 @@ const GrayText = styled.p`
   font-weight: lighter;
   font-size: 1.2rem;
   padding: 5px 0 10px 0;
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
 `;
 
 const ButtonCv = styled(Button)`
   display: block;
   margin: 10px auto;
+  @media ${device.tablet} {
+    /* margin-top: 40px; */
+  }
 `;
 
 const WrapperImage = styled.div`
@@ -47,6 +57,11 @@ const WrapperImage = styled.div`
 const ContactImage = styled.img`
   height: 30vh;
   width: 30vw;
+  @media ${device.tablet} {
+    height: 36vh;
+    width: 36vw;
+    margin-bottom: 6vh;
+  }
 `;
 
 const Creator = styled.p`
@@ -64,6 +79,9 @@ const BackgroundContact = styled.img`
   height: 55vh;
   width: 95vw;
   z-index: -1;
+  @media ${device.tablet} {
+    height: 65vh;
+  }
 `;
 
 const Contact = () => {

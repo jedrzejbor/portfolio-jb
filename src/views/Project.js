@@ -4,6 +4,8 @@ import Button from '../components/atoms/Button/Button';
 import projectView from '../images/project.png';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import { device } from '../theme/deviceSize';
+import LeftArrow from '../images/left_arrow.png';
+import RightArrow from '../images/right_arrow.png';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -29,16 +31,29 @@ const WrapperProject = styled.div`
 const ProjectImage = styled.img`
   height: 30vh;
   width: 30vh;
+  @media ${device.tablet} {
+    height: 45vh;
+    width: 45vh;
+  }
 `;
 const ProjectName = styled.h3`
   font-size: 1.8rem;
   @media ${device.mobileM} {
     font-size: 2rem;
   }
+  @media ${device.tablet} {
+    font-size: 3rem;
+  }
 `;
 
 const WrapperTechnologiesGithub = styled.div`
   display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  @media ${device.tablet} {
+    height: 100px;
+  }
 `;
 
 const TechnologiesWrapper = styled.div`
@@ -52,21 +67,26 @@ const GithubWrapper = styled.div`
   height: 60px;
   width: 37vw;
   padding-left: 20px;
-  /* display: flex; */
 `;
 
 const TextBig = styled.p`
   font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   @media ${device.mobileM} {
     font-size: 1.5rem;
+  }
+  @media ${device.tablet} {
+    font-size: 2.5rem;
   }
 `;
 const TextLow = styled.p`
   font-size: 1.1rem;
   @media ${device.mobileM} {
     font-size: 1.3rem;
+  }
+  @media ${device.tablet} {
+    font-size: 2rem;
   }
 `;
 const Link = styled.a`
@@ -76,6 +96,9 @@ const Link = styled.a`
   @media ${device.mobileM} {
     font-size: 1.3rem;
   }
+  @media ${device.mobileM} {
+    font-size: 1.9rem;
+  }
 `;
 
 const Line = styled.span`
@@ -83,7 +106,9 @@ const Line = styled.span`
   height: 60px;
   width: 3px;
   background-color: #000;
-  transform: translateY(5px);
+  @media ${device.tablet} {
+    height: 100px;
+  }
 `;
 
 const ButtonContact = styled(Button)`
@@ -103,13 +128,30 @@ const WrapperButtonProject = styled.div`
 const ButtonProject = styled.button`
   height: 30px;
   width: 40px;
-  background-color: white;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 15px;
   margin: 10px 10px;
+  overflow: hidden;
+  background-color: #fff;
+
   @media ${device.mobileM} {
     margin-top: 20px;
   }
+  @media ${device.tablet} {
+    height: 50px;
+    width: 150px;
+    border-radius: 30px;
+  }
+`;
+
+const ButtonArrow = styled.span`
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: ${(props) => `url(${props.arrow})`};
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
 `;
 
 const Project = () => {
@@ -127,7 +169,12 @@ const Project = () => {
           </GithubWrapper>
         </WrapperTechnologiesGithub>
         <WrapperButtonProject>
-          <ButtonProject> D - </ButtonProject> <ButtonProject> -D </ButtonProject>
+          <ButtonProject>
+            <ButtonArrow arrow={LeftArrow} />
+          </ButtonProject>
+          <ButtonProject>
+            <ButtonArrow arrow={RightArrow} />
+          </ButtonProject>
         </WrapperButtonProject>
         <ButtonContact> Contact </ButtonContact>
       </WrapperTitle>

@@ -10,6 +10,16 @@ const Head = () => {
     position: relative;
     height: 100vh;
     width: 100vw;
+    @media ${device.laptop} {
+      display: flex;
+    }
+  `;
+  const PictureWrapper = styled.div`
+    @media ${device.laptop} {
+      position: relative;
+      height: 100vh;
+      width: 50vw;
+    }
   `;
   const BackgroundHead = styled.img`
     position: absolute;
@@ -21,11 +31,22 @@ const Head = () => {
     @media ${device.tablet} {
       height: 80vh;
     }
+    @media ${device.laptop} {
+      height: 130vh;
+      width: 50vw;
+    }
   `;
   const TextWrapper = styled.div`
     height: 50vh;
     width: 75vw;
     margin: 0 auto;
+    /* background-color: red; */
+    @media ${device.laptop} {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   `;
   const TextHead = styled.h1`
     padding-top: 100px;
@@ -36,6 +57,10 @@ const Head = () => {
     }
     @media ${device.tablet} {
       font-size: 4rem;
+    }
+    @media ${device.laptop} {
+      font-size: 3rem;
+      padding: 0 40px;
     }
   `;
   const Square = styled.span`
@@ -66,8 +91,15 @@ const Head = () => {
       width: 32vw;
     }
     @media ${device.tablet} {
-      height: 36vh;
-      width: 36vw;
+      height: 34vh;
+      width: 34vw;
+    }
+    @media ${device.laptop} {
+      position: absolute;
+      bottom: 30%;
+      right: 20%;
+      height: 35vh;
+      width: 25vh;
     }
   `;
   return (
@@ -82,10 +114,12 @@ const Head = () => {
         </TextHead>
         <ButtonHead>About</ButtonHead>
       </TextWrapper>
-      <ImageWrapper>
-        <ImageMan src={manworking} alt="man working on laptop" />
-      </ImageWrapper>
-      <BackgroundHead src={BgcBlue} />
+      <PictureWrapper>
+        <ImageWrapper>
+          <ImageMan src={manworking} alt="man working on laptop" />
+        </ImageWrapper>
+        <BackgroundHead src={BgcBlue}></BackgroundHead>
+      </PictureWrapper>
     </Wrapper>
   );
 };

@@ -7,6 +7,7 @@ import Project from './Project';
 import Contact from './Contact';
 import Linkedin from '../images/linkedin.png';
 import Github from '../images/github.png';
+import { device } from '../theme/deviceSize';
 
 const Main = () => {
   const Wrapper = styled.div`
@@ -23,6 +24,9 @@ const Main = () => {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 1px 3px 4px 0px rgba(0, 0, 0, 0.2);
     z-index: 100;
+    @media ${device.tablet} {
+      height: 65px;
+    }
   `;
   const HamburgerLogo = styled.p`
     position: fixed;
@@ -30,7 +34,9 @@ const Main = () => {
     left: 20px;
     font-weight: bold;
     font-size: 0.9rem;
-    /* z-index: 100; */
+    @media ${device.tablet} {
+      font-size: 1.4rem;
+    }
   `;
 
   const BlueLogo = styled.span`
@@ -46,6 +52,12 @@ const Main = () => {
     background-image: url(${Linkedin});
     background-repeat: no-repeat;
     background-size: 20px;
+    @media ${device.tablet} {
+      bottom: 60px;
+      height: 30px;
+      width: 30px;
+      background-size: 30px;
+    }
   `;
   const GithubLogo = styled.a`
     position: fixed;
@@ -56,6 +68,11 @@ const Main = () => {
     background-image: url(${Github});
     background-repeat: no-repeat;
     background-size: 20px;
+    @media ${device.tablet} {
+      height: 30px;
+      width: 30px;
+      background-size: 30px;
+    }
   `;
 
   return (

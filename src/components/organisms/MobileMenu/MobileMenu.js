@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import { device } from '../../../theme/deviceSize';
 
 const MobileMenu = () => {
   const HamburgerButton = styled.button`
@@ -13,6 +14,9 @@ const MobileMenu = () => {
     border-image: initial;
     cursor: pointer;
     background-color: transparent;
+    @media ${device.tablet} {
+      top: 20px;
+    }
   `;
 
   const HamburgerMenu = styled.span`

@@ -15,11 +15,7 @@ const About = () => {
     width: 75vw;
     margin: 0 auto;
     padding-top: 100px;
-  `;
-  const Title = styled(TopicTitle)`
-    @media ${device.mobileM} {
-      font-size: 4rem;
-    }
+    /* background-color: red; */
   `;
 
   const Text = styled.p`
@@ -29,6 +25,9 @@ const About = () => {
     font-weight: 500;
     @media ${device.mobileM} {
       font-size: 1.5rem;
+    }
+    @media ${device.tablet} {
+      font-size: 2.5rem;
     }
   `;
 
@@ -53,12 +52,16 @@ const About = () => {
       height: 32vh;
       width: 32vw;
     }
+    @media ${device.tablet} {
+      height: 34vh;
+      width: 34vw;
+    }
   `;
 
   return (
     <Wrapper>
       <WrapperText>
-        <Title>About</Title>
+        <TopicTitle>About</TopicTitle>
         <Text>
           Hi, I am 22 years old student of informatics specialization front-end developer. My hobby
           is programing, car and race. In my projects I use HTML, CSS, JS, React and I started learn
