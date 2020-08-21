@@ -17,6 +17,9 @@ const MobileMenu = () => {
     @media ${device.tablet} {
       top: 20px;
     }
+    @media ${device.laptop} {
+      opacity: 0;
+    }
   `;
 
   const HamburgerMenu = styled.span`
@@ -85,6 +88,9 @@ const MobileMenu = () => {
       css`
         transform: translateX(0);
       `};
+    @media ${device.tablet} {
+      opacity: 0;
+    }
   `;
 
   const MenuList = styled.ul`

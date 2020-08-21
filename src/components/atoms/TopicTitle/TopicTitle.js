@@ -13,5 +13,8 @@ const TopicTitle = styled.h2 `
     @media ${device.tablet} {
       font-size: 6rem;
     }
+    @media ${device.laptop} {
+      font-size: 4.5rem;
+    }
 `
 export default TopicTitle;

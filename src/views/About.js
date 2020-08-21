@@ -9,13 +9,34 @@ const About = () => {
   const Wrapper = styled.div`
     height: 100vh;
     width: 100vw;
+    @media ${device.laptop} {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   `;
   const WrapperText = styled.div`
     height: 50vh;
     width: 75vw;
     margin: 0 auto;
     padding-top: 100px;
-    /* background-color: red; */
+    @media ${device.laptop} {
+      width: 35vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0;
+      order: 2;
+      margin: 0;
+    }
+  `;
+  const DesktopText = styled.div`
+    @media ${device.laptop} {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 1.7rem;
+      width: 80%;
+    }
   `;
 
   const Text = styled.p`
@@ -29,6 +50,9 @@ const About = () => {
     @media ${device.tablet} {
       font-size: 2.5rem;
     }
+    @media ${device.laptop} {
+      font-size: 1.7rem;
+    }
   `;
 
   const ButtonProjects = styled(Button)`
@@ -41,7 +65,12 @@ const About = () => {
     width: 75vw;
     margin: 0 auto;
     display: flex;
+    /* justify-content: right; */
     align-items: center;
+    @media ${device.laptop} {
+      width: 35vw;
+      margin: 0;
+    }
   `;
   const ImageMan = styled.img`
     display: block;
@@ -56,18 +85,24 @@ const About = () => {
       height: 34vh;
       width: 34vw;
     }
+    @media ${device.laptop} {
+      height: 40vh;
+      width: 15vw;
+    }
   `;
 
   return (
     <Wrapper>
       <WrapperText>
-        <TopicTitle>About</TopicTitle>
-        <Text>
-          Hi, I am 22 years old student of informatics specialization front-end developer. My hobby
-          is programing, car and race. In my projects I use HTML, CSS, JS, React and I started learn
-          Node JS.
-        </Text>
-        <ButtonProjects>Projects</ButtonProjects>
+        <DesktopText>
+          <TopicTitle>About</TopicTitle>
+          <Text>
+            Hi, I am 22 years old student of informatics specialization front-end developer. My
+            hobby is programing, car and race. In my projects I use HTML, CSS, JS, React and I
+            started learn Node JS.
+          </Text>
+          <ButtonProjects>Projects</ButtonProjects>
+        </DesktopText>
       </WrapperText>
       <WrapperImage>
         <ImageMan src={manStanding} alt="man standing" />

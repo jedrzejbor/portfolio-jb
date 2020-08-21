@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import MobileMenu from '../components/organisms/MobileMenu/MobileMenu';
+import DesktopMenu from '../components/organisms/DesktopMenu/DesktopMenu';
 import Head from './Head';
 import About from './About';
 import Project from './Project';
@@ -75,14 +76,17 @@ const Main = () => {
     }
   `;
 
+  const { width, setWidth } = useState(window.innerWidth);
+
   return (
     <Wrapper>
       <LinkedinLogo />
       <GithubLogo />
       <HamburgerWrapper>
         <HamburgerLogo>
-          <BlueLogo>JEDRZEJ</BlueLogo> BORAKIEWICZ
+          <BlueLogo>JEDRZEJ</BlueLogo> BORAKIEWICZ {width}
         </HamburgerLogo>
+        <DesktopMenu />
         <MobileMenu />
       </HamburgerWrapper>
       <Head />

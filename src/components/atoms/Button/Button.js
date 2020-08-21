@@ -23,6 +23,12 @@ const Button = styled.button `
       width: 250px;
       font-size:2rem;
     }
+  @media ${device.laptop} {
+      height: 40px;
+      width: 200px;
+      /* font-size:2rem; */
+    }
+    
 `;
 
 
