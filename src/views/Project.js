@@ -14,7 +14,6 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: yellow; */
   }
 `;
 
@@ -25,7 +24,6 @@ const WrapperTitle = styled.div`
   padding-top: 50px;
   @media ${device.laptop} {
     width: 35vw;
-    /* background-color: red; */
     margin: 0;
   }
 `;
@@ -39,7 +37,6 @@ const WrapperProject = styled.div`
   align-items: center;
   @media ${device.laptop} {
     width: 35vw;
-    /* background-color: blue; */
     margin: 0;
   }
 `;
@@ -76,11 +73,6 @@ const WrapperTechnologiesGithub = styled.div`
   align-items: center;
   @media ${device.tablet} {
     height: 100px;
-  }
-  @media ${device.laptop} {
-    /* width: 35vw; */
-    background-color: red;
-    /* margin: 0; */
   }
 `;
 
