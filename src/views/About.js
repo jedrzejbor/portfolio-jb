@@ -13,6 +13,7 @@ const About = () => {
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: green;
     }
   `;
   const WrapperText = styled.div`

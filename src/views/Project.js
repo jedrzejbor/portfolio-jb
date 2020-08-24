@@ -10,6 +10,12 @@ import RightArrow from '../images/right_arrow.png';
 const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
+  @media ${device.laptop} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+  }
 `;
 
 const WrapperTitle = styled.div`
@@ -17,6 +23,11 @@ const WrapperTitle = styled.div`
   width: 75vw;
   margin: 0 auto;
   padding-top: 50px;
+  @media ${device.laptop} {
+    width: 35vw;
+    /* background-color: red; */
+    margin: 0;
+  }
 `;
 
 const WrapperProject = styled.div`
@@ -26,6 +37,11 @@ const WrapperProject = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media ${device.laptop} {
+    width: 35vw;
+    /* background-color: blue; */
+    margin: 0;
+  }
 `;
 
 const ProjectImage = styled.img`
@@ -34,6 +50,10 @@ const ProjectImage = styled.img`
   @media ${device.tablet} {
     height: 45vh;
     width: 45vh;
+  }
+  @media ${device.laptop} {
+    height: 35vh;
+    width: 35vh;
   }
 `;
 const ProjectName = styled.h3`
@@ -44,6 +64,9 @@ const ProjectName = styled.h3`
   @media ${device.tablet} {
     font-size: 3rem;
   }
+  @media ${device.laptop} {
+    font-size: 2.5rem;
+  }
 `;
 
 const WrapperTechnologiesGithub = styled.div`
@@ -53,6 +76,11 @@ const WrapperTechnologiesGithub = styled.div`
   align-items: center;
   @media ${device.tablet} {
     height: 100px;
+  }
+  @media ${device.laptop} {
+    /* width: 35vw; */
+    background-color: red;
+    /* margin: 0; */
   }
 `;
 
@@ -79,6 +107,9 @@ const TextBig = styled.p`
   @media ${device.tablet} {
     font-size: 2.5rem;
   }
+  @media ${device.laptop} {
+    font-size: 1.5rem;
+  }
 `;
 const TextLow = styled.p`
   font-size: 1.1rem;
@@ -87,6 +118,9 @@ const TextLow = styled.p`
   }
   @media ${device.tablet} {
     font-size: 2rem;
+  }
+  @media ${device.laptop} {
+    font-size: 1.1rem;
   }
 `;
 const Link = styled.a`
@@ -99,6 +133,9 @@ const Link = styled.a`
   @media ${device.mobileM} {
     font-size: 1.9rem;
   }
+  @media ${device.laptop} {
+    font-size: 1.1rem;
+  }
 `;
 
 const Line = styled.span`
@@ -108,6 +145,9 @@ const Line = styled.span`
   background-color: #000;
   @media ${device.tablet} {
     height: 100px;
+  }
+  @media ${device.laptop} {
+    height: 60px;
   }
 `;
 
@@ -123,6 +163,9 @@ const WrapperButtonProject = styled.div`
   width: 75vw;
   display: flex;
   justify-content: center;
+  @media ${device.laptop} {
+    width: 35vw;
+  }
 `;
 
 const ButtonProject = styled.button`
@@ -141,6 +184,10 @@ const ButtonProject = styled.button`
     height: 50px;
     width: 150px;
     border-radius: 30px;
+  }
+  @media ${device.laptop} {
+    height: 30px;
+    width: 100px;
   }
 `;
 
