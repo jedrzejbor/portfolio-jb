@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import MobileMenu from '../components/organisms/MobileMenu/MobileMenu';
 import DesktopMenu from '../components/organisms/DesktopMenu/DesktopMenu';
@@ -76,15 +76,13 @@ const Main = () => {
     }
   `;
 
-  const { width, setWidth } = useState(window.innerWidth);
-
   return (
     <Wrapper>
       <LinkedinLogo />
       <GithubLogo />
       <HamburgerWrapper>
         <HamburgerLogo>
-          <BlueLogo>JEDRZEJ</BlueLogo> BORAKIEWICZ {width}
+          <BlueLogo>JEDRZEJ</BlueLogo> BORAKIEWICZ
         </HamburgerLogo>
         <DesktopMenu />
         <MobileMenu />

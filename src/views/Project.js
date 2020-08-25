@@ -100,7 +100,7 @@ const TextBig = styled.p`
     font-size: 2.5rem;
   }
   @media ${device.laptop} {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 `;
 const TextLow = styled.p`
@@ -112,7 +112,7 @@ const TextLow = styled.p`
     font-size: 2rem;
   }
   @media ${device.laptop} {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 `;
 const Link = styled.a`
@@ -122,11 +122,11 @@ const Link = styled.a`
   @media ${device.mobileM} {
     font-size: 1.3rem;
   }
-  @media ${device.mobileM} {
-    font-size: 1.9rem;
+  @media ${device.tablet} {
+    font-size: 2rem;
   }
   @media ${device.laptop} {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 `;
 
