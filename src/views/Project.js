@@ -25,6 +25,15 @@ const WrapperTitle = styled.div`
   @media ${device.laptop} {
     width: 35vw;
     margin: 0;
+    /* background-color: red; */
+  }
+`;
+
+const WrapperTextCenter = styled.div`
+  @media ${device.laptopL} {
+    /* background-color: blue; */
+    width: 70%;
+    margin: 0 auto;
   }
 `;
 
@@ -52,6 +61,10 @@ const ProjectImage = styled.img`
     height: 35vh;
     width: 35vh;
   }
+  @media ${device.laptopL} {
+    height: 45vh;
+    width: 50vh;
+  }
 `;
 const ProjectName = styled.h3`
   font-size: 1.8rem;
@@ -63,6 +76,9 @@ const ProjectName = styled.h3`
   }
   @media ${device.laptop} {
     font-size: 2.5rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 3rem;
   }
 `;
 
@@ -102,6 +118,9 @@ const TextBig = styled.p`
   @media ${device.laptop} {
     font-size: 1.7rem;
   }
+  @media ${device.laptopL} {
+    font-size: 2rem;
+  }
 `;
 const TextLow = styled.p`
   font-size: 1.1rem;
@@ -113,6 +132,9 @@ const TextLow = styled.p`
   }
   @media ${device.laptop} {
     font-size: 1.2rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 1.3rem;
   }
 `;
 const Link = styled.a`
@@ -127,6 +149,15 @@ const Link = styled.a`
   }
   @media ${device.laptop} {
     font-size: 1.2rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 1.3rem;
+  }
+`;
+
+const LinkDemo = styled(Link)`
+  @media ${device.laptop} {
+    padding-left: 20px;
   }
 `;
 
@@ -157,6 +188,8 @@ const WrapperButtonProject = styled.div`
   justify-content: center;
   @media ${device.laptop} {
     width: 35vw;
+    justify-content: start;
+    align-items: center;
   }
 `;
 
@@ -197,6 +230,7 @@ const Project = () => {
   return (
     <Wrapper>
       <WrapperTitle>
+        {/* <WrapperTextCenter> */}
         <TopicTitle> Projects </TopicTitle> <ProjectName> 01. Weather App </ProjectName>
         <WrapperTechnologiesGithub>
           <TechnologiesWrapper>
@@ -207,6 +241,7 @@ const Project = () => {
             <TextBig> Github </TextBig> <Link href="https://github.com/jedrzejbor"> Link </Link>
           </GithubWrapper>
         </WrapperTechnologiesGithub>
+        {/* </WrapperTextCenter> */}
         <WrapperButtonProject>
           <ButtonProject>
             <ButtonArrow arrow={LeftArrow} />
@@ -214,8 +249,9 @@ const Project = () => {
           <ButtonProject>
             <ButtonArrow arrow={RightArrow} />
           </ButtonProject>
+          <LinkDemo href="https://github.com/jedrzejbor"> Open Demo </LinkDemo>
         </WrapperButtonProject>
-        <ButtonContact> Contact </ButtonContact>
+        {/* <ButtonContact> Contact </ButtonContact> */}
       </WrapperTitle>
       <WrapperProject>
         <ProjectImage src={projectView} />

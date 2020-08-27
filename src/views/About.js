@@ -53,6 +53,9 @@ const About = () => {
     @media ${device.laptop} {
       font-size: 1.7rem;
     }
+    @media ${device.laptopL} {
+      font-size: 2rem;
+    }
   `;
 
   const ButtonProjects = styled(Button)`
@@ -101,7 +104,7 @@ const About = () => {
             hobby is programing, car and race. In my projects I use HTML, CSS, JS, React and I
             started learn Node JS.
           </Text>
-          <ButtonProjects>Projects</ButtonProjects>
+          {/* <ButtonProjects>Projects</ButtonProjects> */}
         </DesktopText>
       </WrapperText>
       <WrapperImage>

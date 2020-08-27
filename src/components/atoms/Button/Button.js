@@ -28,6 +28,10 @@ const Button = styled.button `
       width: 200px;
       /* font-size:2rem; */
     }
+    @media ${device.laptopL} {
+      height:50px;
+      width:300px;
+    }
     
 `;
 
