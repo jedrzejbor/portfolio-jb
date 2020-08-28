@@ -1,0 +1,37 @@
+<svg id="Component_7_1" data-name="Component 7 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="839.237" height="1078.984" viewBox="0 0 839.237 1078.984">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        isolation: isolate;
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #9815ff;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" y="57" width="839.237" height="1078.984"/>
+    </clipPath>
+  </defs>
+  <g id="Scroll_Group_1" data-name="Scroll Group 1" class="cls-2" transform="translate(0 -57)">
+    <g id="Component_6_1" data-name="Component 6 – 1">
+      <path id="Path_1" data-name="Path 1" class="cls-3" d="M773.281,476.978C1330.037,1411.095,1080,241.766,1080,540v702H0V540C0,241.766,216.526-457.139,773.281,476.978Z" transform="translate(-7.763 1135.984) rotate(-90)"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-4" width="150" height="20" rx="10" transform="translate(32.237 1014.984)"/>
+      <rect id="Rectangle_6" data-name="Rectangle 6" class="cls-3" width="150" height="20" rx="10" transform="translate(0.237 958.984)"/>
+      <rect id="Rectangle_7" data-name="Rectangle 7" class="cls-4" width="150" height="10" rx="5" transform="translate(9.237 658.984)"/>
+      <rect id="Rectangle_8" data-name="Rectangle 8" class="cls-3" width="150" height="10" rx="5" transform="translate(574.237 221.984)"/>
+      <rect id="Rectangle_13" data-name="Rectangle 13" class="cls-3" width="150" height="10" rx="5" transform="translate(30.237 990.984)"/>
+      <rect id="Rectangle_14" data-name="Rectangle 14" class="cls-3" width="150" height="20" rx="10" transform="translate(642.237 183.984)"/>
+      <rect id="Rectangle_15" data-name="Rectangle 15" class="cls-4" width="150" height="20" rx="10" transform="translate(66.237 607.984)"/>
+    </g>
+  </g>
+</svg>

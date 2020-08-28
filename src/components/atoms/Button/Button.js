@@ -4,12 +4,14 @@ import {
 } from '../../../theme/deviceSize';
 
 const Button = styled.button `
-  border: 1px solid #9815FF;
+  /* border: 1px solid #9815FF; */
+  border: 1px solid white;
   height: 30px;
   width: 150px;
   border-radius: 10px;
   background-color: transparent;
-  color: #9815FF;
+  /* color: #9815FF; */
+  color: white;
   transition: .3s;
   font-weight:bold;
 

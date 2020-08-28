@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../components/atoms/Button/Button';
 import manworking from '../images/man_working.png';
-import BgcBlue from '../images/Background_main.png';
+import BackgroundHead from '../components/atoms/BackgroundHead/BackgroundHead';
+// import BgcBlue from '../images/Background_main.png';
+// import BgcBlue from '../images/Background_head.svg';
 import { device } from '../theme/deviceSize';
 
 const Head = () => {
@@ -12,7 +14,7 @@ const Head = () => {
     width: 100vw;
     @media ${device.laptop} and (orientation: landscape) {
       display: flex;
-      background-color: #292832;
+      /* background-color: #292832; */
     }
   `;
   const PictureWrapper = styled.div`
@@ -22,29 +24,36 @@ const Head = () => {
       width: 50vw;
     }
     @media ${device.desktop} {
-      background-color: red;
+      /* background-color: red; */
     }
   `;
-  const BackgroundHead = styled.img`
-    position: absolute;
-    bottom: 0;
-    right: -10px;
-    height: 65vh;
-    width: 95vw;
-    z-index: -1;
-    @media ${device.tablet} {
-      height: 80vh;
-    }
-    @media ${device.laptop} and (orientation: landscape) {
-      height: 130vh;
-      width: 50vw;
-    }
-    @media ${device.desktop} {
-      height: 110vh;
-      width: 50vw;
-      opacity: 0;
-    }
+  const BackgroundHeadd = styled(BackgroundHead)`
+    height: 100vh;
+    width: 100vw;
   `;
+  // const BackgroundHead = styled.img`
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: -10px;
+  //   height: 100vh;
+  //   width: 95vw;
+  //   z-index: -1;
+  //   background-color: red;
+  //   @media ${device.tablet} {
+  //     height: 80vh;
+  //   }
+  //   @media ${device.laptop} and (orientation: landscape) {
+  //     height: 130vh;
+  //     width: 50vw;
+  //   }
+  //   @media ${device.desktop} {
+  //     height: 110vh;
+  //     width: 50vw;
+  //     right: -2vw;
+  //     /* opacity: 0; */
+  //   }
+  // `;
+
   const TextWrapper = styled.div`
     height: 50vh;
     width: 75vw;
@@ -143,7 +152,8 @@ const Head = () => {
         <ImageWrapper>
           <ImageMan src={manworking} alt="man working on laptop" />
         </ImageWrapper>
-        <BackgroundHead src={BgcBlue}></BackgroundHead>
+        {/* <BackgroundHead src={BgcBlue}></BackgroundHead> */}
+        <BackgroundHeadd />
       </PictureWrapper>
     </Wrapper>
   );
