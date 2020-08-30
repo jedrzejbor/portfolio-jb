@@ -15,9 +15,15 @@ const About = () => {
       align-items: center;
     }
   `;
+
+  const WrapperAbout = styled.div`
+    height: 100vh;
+    width: 80vw;
+    margin: 0 auto;
+  `;
   const WrapperText = styled.div`
-    height: 50vh;
-    width: 75vw;
+    height: 50%;
+    width: 100%;
     margin: 0 auto;
     padding-top: 100px;
     @media ${device.laptop} {
@@ -28,6 +34,11 @@ const About = () => {
       order: 2;
       margin: 0;
     }
+  `;
+  const Square = styled.span`
+    display: inline-block;
+    background-color: #9815ff;
+    color: white;
   `;
   const DesktopText = styled.div`
     @media ${device.laptop} {
@@ -58,17 +69,11 @@ const About = () => {
     }
   `;
 
-  const ButtonProjects = styled(Button)`
-    display: block;
-    margin: 0 auto;
-  `;
-
   const WrapperImage = styled.div`
-    height: 50vh;
-    width: 75vw;
+    height: 50%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
-    /* justify-content: right; */
     align-items: center;
     @media ${device.laptop} {
       width: 35vw;
@@ -96,20 +101,24 @@ const About = () => {
 
   return (
     <Wrapper>
-      <WrapperText>
-        <DesktopText>
-          <TopicTitle>About</TopicTitle>
-          <Text>
-            Hi, I am 22 years old student of informatics specialization front-end developer. My
-            hobby is programing, car and race. In my projects I use HTML, CSS, JS, React and I
-            started learn Node JS.
-          </Text>
-          {/* <ButtonProjects>Projects</ButtonProjects> */}
-        </DesktopText>
-      </WrapperText>
-      <WrapperImage>
-        <ImageMan src={manStanding} alt="man standing" />
-      </WrapperImage>
+      <WrapperAbout>
+        <WrapperText>
+          <DesktopText>
+            <TopicTitle>
+              <Square>Abo</Square>ut
+            </TopicTitle>
+            <Text>
+              Hi, I am 22 years old student of informatics specialization front-end developer. My
+              hobby is programing, car and race. In my projects I use HTML, CSS, JS, React and I
+              started learn Node JS.
+            </Text>
+            {/* <ButtonProjects>Projects</ButtonProjects> */}
+          </DesktopText>
+        </WrapperText>
+        <WrapperImage>
+          <ImageMan src={manStanding} alt="man standing" />
+        </WrapperImage>
+      </WrapperAbout>
     </Wrapper>
   );
 };

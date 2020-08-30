@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../components/atoms/Button/Button';
 import projectView from '../images/project.png';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import { device } from '../theme/deviceSize';
@@ -16,11 +15,15 @@ const Wrapper = styled.div`
     align-items: center;
   }
 `;
+const WrapperProjectSection = styled.div`
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+`;
 
 const WrapperTitle = styled.div`
   height: 50vh;
-  width: 75vw;
-  margin: 0 auto;
+  width: 100%;
   padding-top: 50px;
   @media ${device.laptop} {
     width: 35vw;
@@ -29,17 +32,9 @@ const WrapperTitle = styled.div`
   }
 `;
 
-const WrapperTextCenter = styled.div`
-  @media ${device.laptopL} {
-    /* background-color: blue; */
-    width: 70%;
-    margin: 0 auto;
-  }
-`;
-
 const WrapperProject = styled.div`
-  height: 50vh;
-  width: 75vw;
+  height: 40vh;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -51,8 +46,8 @@ const WrapperProject = styled.div`
 `;
 
 const ProjectImage = styled.img`
-  height: 30vh;
-  width: 30vh;
+  height: 100%;
+  width: 100%;
   @media ${device.tablet} {
     height: 45vh;
     width: 45vh;
@@ -174,14 +169,6 @@ const Line = styled.span`
   }
 `;
 
-const ButtonContact = styled(Button)`
-  display: block;
-  margin: 0 auto;
-  @media ${device.mobileM} {
-    margin-top: 20px;
-  }
-`;
-
 const WrapperButtonProject = styled.div`
   width: 75vw;
   display: flex;
@@ -229,33 +216,32 @@ const ButtonArrow = styled.span`
 const Project = () => {
   return (
     <Wrapper>
-      <WrapperTitle>
-        {/* <WrapperTextCenter> */}
-        <TopicTitle> Projects </TopicTitle> <ProjectName> 01. Weather App </ProjectName>
-        <WrapperTechnologiesGithub>
-          <TechnologiesWrapper>
-            <TextBig> Technologies </TextBig> <TextLow> React, OpenWeatherApi </TextLow>
-          </TechnologiesWrapper>
-          <Line />
-          <GithubWrapper>
-            <TextBig> Github </TextBig> <Link href="https://github.com/jedrzejbor"> Link </Link>
-          </GithubWrapper>
-        </WrapperTechnologiesGithub>
-        {/* </WrapperTextCenter> */}
-        <WrapperButtonProject>
-          <ButtonProject>
-            <ButtonArrow arrow={LeftArrow} />
-          </ButtonProject>
-          <ButtonProject>
-            <ButtonArrow arrow={RightArrow} />
-          </ButtonProject>
-          <LinkDemo href="https://github.com/jedrzejbor"> Open Demo </LinkDemo>
-        </WrapperButtonProject>
-        {/* <ButtonContact> Contact </ButtonContact> */}
-      </WrapperTitle>
-      <WrapperProject>
-        <ProjectImage src={projectView} />
-      </WrapperProject>
+      <WrapperProjectSection>
+        <WrapperTitle>
+          <TopicTitle> Projects </TopicTitle> <ProjectName> 01. Weather App </ProjectName>
+          <WrapperTechnologiesGithub>
+            <TechnologiesWrapper>
+              <TextBig> Technologies </TextBig> <TextLow> React, OpenWeatherApi </TextLow>
+            </TechnologiesWrapper>
+            <Line />
+            <GithubWrapper>
+              <TextBig> Github </TextBig> <Link href="https://github.com/jedrzejbor"> Link </Link>
+            </GithubWrapper>
+          </WrapperTechnologiesGithub>
+          <WrapperButtonProject>
+            <ButtonProject>
+              <ButtonArrow arrow={LeftArrow} />
+            </ButtonProject>
+            <ButtonProject>
+              <ButtonArrow arrow={RightArrow} />
+            </ButtonProject>
+            <LinkDemo href="https://github.com/jedrzejbor"> Open Demo </LinkDemo>
+          </WrapperButtonProject>
+        </WrapperTitle>
+        <WrapperProject>
+          <ProjectImage src={projectView} />
+        </WrapperProject>
+      </WrapperProjectSection>
     </Wrapper>
   );
 };

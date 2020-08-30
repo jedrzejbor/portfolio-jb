@@ -12,66 +12,33 @@ const Head = () => {
     position: relative;
     height: 100vh;
     width: 100vw;
+    background-color: #9815ff;
     @media ${device.laptop} and (orientation: landscape) {
-      display: flex;
-      /* background-color: #292832; */
+      /* display: flex; */
     }
   `;
-  const PictureWrapper = styled.div`
-    @media ${device.laptop} and (orientation: landscape) {
-      position: relative;
-      height: 100vh;
-      width: 50vw;
-    }
-    @media ${device.desktop} {
-      /* background-color: red; */
-    }
+  const WrapperHead = styled.div`
+    height: 100%;
+    margin: 0 auto;
+    width: 80vw;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
   `;
-  const BackgroundHeadd = styled(BackgroundHead)`
-    height: 100vh;
-    width: 100vw;
-  `;
-  // const BackgroundHead = styled.img`
-  //   position: absolute;
-  //   bottom: 0;
-  //   right: -10px;
-  //   height: 100vh;
-  //   width: 95vw;
-  //   z-index: -1;
-  //   background-color: red;
-  //   @media ${device.tablet} {
-  //     height: 80vh;
-  //   }
-  //   @media ${device.laptop} and (orientation: landscape) {
-  //     height: 130vh;
-  //     width: 50vw;
-  //   }
-  //   @media ${device.desktop} {
-  //     height: 110vh;
-  //     width: 50vw;
-  //     right: -2vw;
-  //     /* opacity: 0; */
-  //   }
-  // `;
-
   const TextWrapper = styled.div`
     height: 50vh;
-    width: 75vw;
-    margin: 0 auto;
+    width: 100%;
     /* background-color: red; */
     @media ${device.laptop} and (orientation: landscape) {
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-    @media ${device.desktop} {
-      width: 40vw;
     }
   `;
   const TextHead = styled.h1`
     padding-top: 100px;
     font-size: 2.5rem;
+    color: white;
 
     @media ${device.mobileM} {
       font-size: 3rem;
@@ -81,7 +48,7 @@ const Head = () => {
     }
     @media ${device.laptop} and (orientation: landscape) {
       font-size: 3rem;
-      padding: 0 40px;
+      /* padding: 0 40px; */
     }
     @media ${device.laptopL} {
       font-size: 4.5rem;
@@ -92,8 +59,8 @@ const Head = () => {
   `;
   const Square = styled.span`
     display: inline-block;
-    background-color: #9815ff;
-    color: white;
+    background-color: white;
+    color: black;
   `;
   const ButtonHead = styled(Button)`
     display: block;
@@ -102,11 +69,12 @@ const Head = () => {
   `;
   const ImageWrapper = styled.div`
     height: 50vh;
-    width: 75vw;
+    width: 100%;
+    /* background-color: green; */
     margin: 0 auto;
     padding-top: 40px;
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
   `;
   const ImageMan = styled.img`
     display: block;
@@ -138,23 +106,21 @@ const Head = () => {
   `;
   return (
     <Wrapper>
-      <TextWrapper>
-        <TextHead>
-          <Square>
-            Hi, <br />
-            I’m Jędrzej
-          </Square>{' '}
-          Borakiewicz, web developer.{' '}
-        </TextHead>
-        <ButtonHead>About</ButtonHead>
-      </TextWrapper>
-      <PictureWrapper>
+      <WrapperHead>
+        <TextWrapper>
+          <TextHead>
+            <Square>
+              Hi, <br />
+              I’m Jędrzej
+            </Square>{' '}
+            Borakiewicz, web developer.{' '}
+          </TextHead>
+          <ButtonHead>About</ButtonHead>
+        </TextWrapper>
         <ImageWrapper>
           <ImageMan src={manworking} alt="man working on laptop" />
         </ImageWrapper>
-        {/* <BackgroundHead src={BgcBlue}></BackgroundHead> */}
-        <BackgroundHeadd />
-      </PictureWrapper>
+      </WrapperHead>
     </Wrapper>
   );
 };
