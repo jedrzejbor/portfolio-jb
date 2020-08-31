@@ -5,6 +5,7 @@ import Button from '../components/atoms/Button/Button';
 import ManHandUp from '../images/man_hand_up.png';
 import BgcBlue from '../images/Background_contact.png';
 import { device } from '../theme/deviceSize';
+import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 
 const Wrapper = styled.div`
   /* position: relative; */
@@ -130,7 +131,9 @@ const Contact = () => {
     <Wrapper>
       <WrapperContact>
         <WrapperText>
-          <TopicTitle>Contact</TopicTitle>
+          <TopicTitle white>
+            <SquareTitle white>Cont</SquareTitle>act
+          </TopicTitle>
           <TopicContact>EMAIL</TopicContact>
           <GrayText>jedrzej.borakiewicz@gmail.com</GrayText>
           <TopicContact>GITHUB</TopicContact>

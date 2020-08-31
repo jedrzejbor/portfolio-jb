@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import manStanding from '../images/Man_simple.png';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
+import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import { device } from '../theme/deviceSize';
 
 const About = () => {
@@ -35,11 +36,7 @@ const About = () => {
       margin: 0;
     }
   `;
-  const Square = styled.span`
-    display: inline-block;
-    background-color: #9815ff;
-    color: white;
-  `;
+
   const DesktopText = styled.div`
     @media ${device.laptop} {
       display: flex;
@@ -105,7 +102,7 @@ const About = () => {
         <WrapperText>
           <DesktopText>
             <TopicTitle>
-              <Square>Abo</Square>ut
+              <SquareTitle>Abo</SquareTitle>ut
             </TopicTitle>
             <Text>
               Hi, I am 22 years old student of informatics specialization front-end developer. My

@@ -5,6 +5,7 @@ import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import { device } from '../theme/deviceSize';
 import LeftArrow from '../images/left_arrow.png';
 import RightArrow from '../images/right_arrow.png';
+import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -28,7 +29,6 @@ const WrapperTitle = styled.div`
   @media ${device.laptop} {
     width: 35vw;
     margin: 0;
-    /* background-color: red; */
   }
 `;
 
@@ -218,7 +218,11 @@ const Project = () => {
     <Wrapper>
       <WrapperProjectSection>
         <WrapperTitle>
-          <TopicTitle> Projects </TopicTitle> <ProjectName> 01. Weather App </ProjectName>
+          <TopicTitle>
+            {' '}
+            <SquareTitle>Proj</SquareTitle>ects{' '}
+          </TopicTitle>{' '}
+          <ProjectName> 01. Weather App </ProjectName>
           <WrapperTechnologiesGithub>
             <TechnologiesWrapper>
               <TextBig> Technologies </TextBig> <TextLow> React, OpenWeatherApi </TextLow>

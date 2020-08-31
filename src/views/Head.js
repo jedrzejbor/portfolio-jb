@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import Button from '../components/atoms/Button/Button';
 import manworking from '../images/man_working.png';
 import BackgroundHead from '../components/atoms/BackgroundHead/BackgroundHead';
-// import BgcBlue from '../images/Background_main.png';
-// import BgcBlue from '../images/Background_head.svg';
+import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import { device } from '../theme/deviceSize';
 
 const Head = () => {
@@ -57,11 +56,6 @@ const Head = () => {
       font-size: 5rem;
     }
   `;
-  const Square = styled.span`
-    display: inline-block;
-    background-color: white;
-    color: black;
-  `;
   const ButtonHead = styled(Button)`
     display: block;
     margin: 0 auto;
@@ -109,10 +103,10 @@ const Head = () => {
       <WrapperHead>
         <TextWrapper>
           <TextHead>
-            <Square>
+            <SquareTitle white>
               Hi, <br />
               I’m Jędrzej
-            </Square>{' '}
+            </SquareTitle>{' '}
             Borakiewicz, web developer.{' '}
           </TextHead>
           <ButtonHead>About</ButtonHead>
