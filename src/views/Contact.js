@@ -6,9 +6,9 @@ import ManHandUp from '../images/man_hand_up.png';
 import BgcBlue from '../images/Background_contact.png';
 import { device } from '../theme/deviceSize';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
+import TriangleBackground from '../components/atoms/TriangleBackground/TriangleBackground';
 
 const Wrapper = styled.div`
-  /* position: relative; */
   height: 100vh;
   width: 100vw;
   background-color: #9815ff;
@@ -20,9 +20,15 @@ const Wrapper = styled.div`
 `;
 
 const WrapperContact = styled.div`
-  height: 100vh;
-  width: 80vw;
+  height: 100%;
+  width: 80%;
+  max-width: 1440px;
   margin: 0 auto;
+  @media ${device.laptop} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const WrapperText = styled.div`
@@ -109,46 +115,31 @@ const Creator = styled.p`
   color: #828282;
 `;
 
-const BackgroundContact = styled.img`
-  position: absolute;
-  bottom: 0;
-  left: -12.5vw;
-  height: 55vh;
-  width: 95vw;
-  z-index: -1;
-  @media ${device.tablet} {
-    height: 65vh;
-  }
-  @media ${device.laptop} {
-    left: -10vw;
-    width: 62.5vw;
-    height: 100vh;
-  }
-`;
-
 const Contact = () => {
   return (
-    <Wrapper>
-      <WrapperContact>
-        <WrapperText>
-          <TopicTitle white>
-            <SquareTitle white>Cont</SquareTitle>act
-          </TopicTitle>
-          <TopicContact>EMAIL</TopicContact>
-          <GrayText>jedrzej.borakiewicz@gmail.com</GrayText>
-          <TopicContact>GITHUB</TopicContact>
-          <GrayText>jedbor</GrayText>
-          <TopicContact>LINKEDIN</TopicContact>
-          <GrayText>Jędrzej Borakiewicz</GrayText>
-          <ButtonCv>DOWNLOAD CV</ButtonCv>
-        </WrapperText>
-        <WrapperImage>
-          <ContactImage src={ManHandUp} />
-          <Creator>2020 BORAKIEWICZ</Creator>
-          <BackgroundContact src={BgcBlue} />
-        </WrapperImage>
-      </WrapperContact>
-    </Wrapper>
+    <>
+      <TriangleBackground left />
+      <Wrapper>
+        <WrapperContact>
+          <WrapperText>
+            <TopicTitle white>
+              <SquareTitle white>Cont</SquareTitle>act
+            </TopicTitle>
+            <TopicContact>EMAIL</TopicContact>
+            <GrayText>jedrzej.borakiewicz@gmail.com</GrayText>
+            <TopicContact>GITHUB</TopicContact>
+            <GrayText>jedbor</GrayText>
+            <TopicContact>LINKEDIN</TopicContact>
+            <GrayText>Jędrzej Borakiewicz</GrayText>
+            <ButtonCv>DOWNLOAD CV</ButtonCv>
+          </WrapperText>
+          <WrapperImage>
+            <ContactImage src={ManHandUp} />
+            <Creator>2020 BORAKIEWICZ</Creator>
+          </WrapperImage>
+        </WrapperContact>
+      </Wrapper>
+    </>
   );
 };
 

@@ -53,6 +53,7 @@ const Main = () => {
     background-image: url(${Linkedin});
     background-repeat: no-repeat;
     background-size: 20px;
+    z-index: 100;
     @media ${device.tablet} {
       bottom: 60px;
       height: 30px;
@@ -69,6 +70,7 @@ const Main = () => {
     background-image: url(${Github});
     background-repeat: no-repeat;
     background-size: 20px;
+    z-index: 100;
     @media ${device.tablet} {
       height: 30px;
       width: 30px;

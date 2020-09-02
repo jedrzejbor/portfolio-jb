@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import manStanding from '../images/Man_simple.png';
+import ManSimple from '../images/Man_simple.svg';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
@@ -18,9 +19,15 @@ const About = () => {
   `;
 
   const WrapperAbout = styled.div`
-    height: 100vh;
-    width: 80vw;
+    height: 100%;
+    width: 80%;
+    max-width: 1440px;
     margin: 0 auto;
+    @media ${device.laptop} {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   `;
   const WrapperText = styled.div`
     height: 50%;
@@ -28,7 +35,8 @@ const About = () => {
     margin: 0 auto;
     padding-top: 100px;
     @media ${device.laptop} {
-      width: 35vw;
+      height: 100%;
+      width: 50%;
       display: flex;
       justify-content: center;
       padding-top: 0;
@@ -73,7 +81,8 @@ const About = () => {
     display: flex;
     align-items: center;
     @media ${device.laptop} {
-      width: 35vw;
+      height: 100%;
+      width: 50%;
       margin: 0;
     }
   `;
@@ -94,6 +103,10 @@ const About = () => {
       height: 40vh;
       width: 15vw;
     }
+    @media ${device.desktop} {
+      height: 30vh;
+      width: 10vw;
+    }
   `;
 
   return (
@@ -113,7 +126,8 @@ const About = () => {
           </DesktopText>
         </WrapperText>
         <WrapperImage>
-          <ImageMan src={manStanding} alt="man standing" />
+          {/* <ImageMan src={manStanding} alt="man standing" /> */}
+          <ImageMan src={ManSimple} alt="man standing" />
         </WrapperImage>
       </WrapperAbout>
     </Wrapper>

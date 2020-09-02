@@ -17,9 +17,15 @@ const Wrapper = styled.div`
   }
 `;
 const WrapperProjectSection = styled.div`
-  height: 100vh;
-  width: 80vw;
+  height: 100%;
+  width: 80%;
+  max-width: 1440px;
   margin: 0 auto;
+  @media ${device.laptop} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const WrapperTitle = styled.div`
@@ -27,20 +33,31 @@ const WrapperTitle = styled.div`
   width: 100%;
   padding-top: 50px;
   @media ${device.laptop} {
-    width: 35vw;
+    height: 100vh;
+    width: 50%;
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const DesktopText = styled.div`
+  @media ${device.laptop} {
+    width: 80%;
   }
 `;
 
 const WrapperProject = styled.div`
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   @media ${device.laptop} {
-    width: 35vw;
+    width: 50%;
     margin: 0;
   }
 `;
@@ -90,13 +107,13 @@ const WrapperTechnologiesGithub = styled.div`
 const TechnologiesWrapper = styled.div`
   display: inline-block;
   height: 60px;
-  width: 37vw;
+  width: 50%;
 `;
 
 const GithubWrapper = styled.div`
   display: inline-block;
   height: 60px;
-  width: 37vw;
+  width: 50%;
   padding-left: 20px;
 `;
 
@@ -172,7 +189,8 @@ const Line = styled.span`
 const WrapperButtonProject = styled.div`
   width: 75vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   @media ${device.laptop} {
     width: 35vw;
     justify-content: start;
@@ -181,11 +199,11 @@ const WrapperButtonProject = styled.div`
 `;
 
 const ButtonProject = styled.button`
-  height: 30px;
-  width: 40px;
-  border: 2px solid black;
+  height: 20px;
+  width: 50px;
+  border: 1px solid black;
   border-radius: 15px;
-  margin: 10px 10px;
+  margin: 10px 5px;
   overflow: hidden;
   background-color: #fff;
 
@@ -218,29 +236,33 @@ const Project = () => {
     <Wrapper>
       <WrapperProjectSection>
         <WrapperTitle>
-          <TopicTitle>
-            {' '}
-            <SquareTitle>Proj</SquareTitle>ects{' '}
-          </TopicTitle>{' '}
-          <ProjectName> 01. Weather App </ProjectName>
-          <WrapperTechnologiesGithub>
-            <TechnologiesWrapper>
-              <TextBig> Technologies </TextBig> <TextLow> React, OpenWeatherApi </TextLow>
-            </TechnologiesWrapper>
-            <Line />
-            <GithubWrapper>
-              <TextBig> Github </TextBig> <Link href="https://github.com/jedrzejbor"> Link </Link>
-            </GithubWrapper>
-          </WrapperTechnologiesGithub>
-          <WrapperButtonProject>
-            <ButtonProject>
-              <ButtonArrow arrow={LeftArrow} />
-            </ButtonProject>
-            <ButtonProject>
-              <ButtonArrow arrow={RightArrow} />
-            </ButtonProject>
-            <LinkDemo href="https://github.com/jedrzejbor"> Open Demo </LinkDemo>
-          </WrapperButtonProject>
+          <DesktopText>
+            <TopicTitle>
+              {' '}
+              <SquareTitle>Proj</SquareTitle>ects{' '}
+            </TopicTitle>{' '}
+            <ProjectName> 01. Weather App </ProjectName>
+            <WrapperTechnologiesGithub>
+              <TechnologiesWrapper>
+                <TextBig> Technologies </TextBig> <TextLow> React, OpenWeatherApi </TextLow>
+              </TechnologiesWrapper>
+              <Line />
+              <GithubWrapper>
+                <TextBig> Github </TextBig> <Link href="https://github.com/jedrzejbor"> Link </Link>
+              </GithubWrapper>
+            </WrapperTechnologiesGithub>
+            <WrapperButtonProject>
+              <div>
+                <ButtonProject>
+                  <ButtonArrow arrow={LeftArrow} />
+                </ButtonProject>
+                <ButtonProject>
+                  <ButtonArrow arrow={RightArrow} />
+                </ButtonProject>
+              </div>
+              <LinkDemo href="https://github.com/jedrzejbor"> Open Demo </LinkDemo>
+            </WrapperButtonProject>
+          </DesktopText>
         </WrapperTitle>
         <WrapperProject>
           <ProjectImage src={projectView} />
