@@ -2,21 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../components/atoms/Button/Button';
 import manworking from '../images/man_working.png';
-import BackgroundHead from '../components/atoms/BackgroundHead/BackgroundHead';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import TriangleBackground from '../components/atoms/TriangleBackground/TriangleBackground';
+import BarTechnologies from '../components/molecules/BarTechnologies/BarTechnologies';
 import { device } from '../theme/deviceSize';
 
 const Head = () => {
   const Wrapper = styled.div`
     position: relative;
-    height: 100vh;
+    height: 85vh;
     width: 100vw;
     background-color: #9815ff;
   `;
   const WrapperHead = styled.div`
     height: 100%;
-    width: 80%;
+    width: 70%;
     max-width: 1440px;
     margin: 0 auto;
     @media ${device.laptop} and (orientation: landscape) {
@@ -27,7 +27,7 @@ const Head = () => {
   `;
 
   const TextWrapper = styled.div`
-    height: 50vh;
+    height: 50%;
     width: 100%;
     @media ${device.laptop} and (orientation: landscape) {
       height: 100%;
@@ -39,7 +39,7 @@ const Head = () => {
   `;
 
   const TextHead = styled.h1`
-    padding-top: 100px;
+    padding-top: 60px;
     font-size: 2.5rem;
     color: white;
 
@@ -54,19 +54,18 @@ const Head = () => {
       padding: 0;
     }
     @media ${device.laptopL} {
-      font-size: 4.5rem;
+      font-size: 3.5rem;
     }
     @media ${device.desktop} {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   `;
   const ButtonHead = styled(Button)`
-    display: block;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
   `;
   const ImageWrapper = styled.div`
-    height: 50vh;
+    height: 50%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -109,6 +108,7 @@ const Head = () => {
               </SquareTitle>{' '}
               Borakiewicz, web developer.{' '}
             </TextHead>
+            <BarTechnologies />
             <ButtonHead>About</ButtonHead>
           </TextWrapper>
           <ImageWrapper>

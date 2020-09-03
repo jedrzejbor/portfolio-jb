@@ -26,13 +26,17 @@ const Main = () => {
     box-shadow: 1px 3px 4px 0px rgba(0, 0, 0, 0.2);
     z-index: 100;
     @media ${device.tablet} {
-      height: 65px;
+      height: 50px;
     }
   `;
   const HamburgerLogo = styled.p`
     position: fixed;
-    top: 20px;
+    /* top: 10px; */
     left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
     font-weight: bold;
     font-size: 0.9rem;
     @media ${device.tablet} {

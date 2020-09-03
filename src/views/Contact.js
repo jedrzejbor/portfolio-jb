@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
 import ManHandUp from '../images/man_hand_up.png';
-import BgcBlue from '../images/Background_contact.png';
 import { device } from '../theme/deviceSize';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import TriangleBackground from '../components/atoms/TriangleBackground/TriangleBackground';

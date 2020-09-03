@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import manStanding from '../images/Man_simple.png';
 import ManSimple from '../images/Man_simple.svg';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
-import Button from '../components/atoms/Button/Button';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import { device } from '../theme/deviceSize';
 
