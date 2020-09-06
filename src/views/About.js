@@ -121,26 +121,11 @@ const About = () => {
         scrollTrigger: {
           trigger: wrapper.current,
           start: 'top 20%',
-          markers: 'true',
           toggleActions: 'restart none none reverse',
         },
       },
     );
-    // gsap.fromTo(
-    //   text.current,
-    //   { x: 100 },
-    //   {
-    //     duration: 1,
-    //     x: 0,
-    //     autoAlpha: 1,
-    //     scrollTrigger: {
-    //       trigger: wrapper.current,
-    //       start: 'top 20%',
-    //       markers: 'true',
-    //       toggleActions: 'restart none none reverse',
-    //     },
-    //   },
-    // );
+
     gsap.fromTo(
       image.current,
       { x: -100 },
@@ -151,7 +136,6 @@ const About = () => {
         scrollTrigger: {
           trigger: wrapper.current,
           start: 'top 20%',
-          markers: 'true',
           toggleActions: 'restart none none reverse',
         },
       },

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import projectView from '../images/project.png';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import { device } from '../theme/deviceSize';
@@ -232,15 +234,51 @@ const ButtonArrow = styled.span`
 `;
 
 const Project = () => {
+  const title = useRef(null);
+  const project = useRef(null);
+  const wrapper = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.set([title.current, project.current], { autoAlpha: 0 });
+    gsap.fromTo(
+      title.current,
+      { x: 100 },
+      {
+        duration: 1,
+        x: 0,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: wrapper.current,
+          start: 'top 20%',
+          toggleActions: 'restart none none reverse',
+        },
+      },
+    );
+    gsap.fromTo(
+      project.current,
+      { x: -100 },
+      {
+        duration: 1,
+        x: 0,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: wrapper.current,
+          start: 'top 20%',
+          toggleActions: 'restart none none reverse',
+        },
+      },
+    );
+  });
+
   return (
-    <Wrapper>
+    <Wrapper ref={wrapper}>
       <WrapperProjectSection>
-        <WrapperTitle>
+        <WrapperTitle ref={title}>
           <DesktopText>
             <TopicTitle>
-              {' '}
-              <SquareTitle>Proj</SquareTitle>ects{' '}
-            </TopicTitle>{' '}
+              <SquareTitle>Proj</SquareTitle>ects
+            </TopicTitle>
             <ProjectName> 01. Weather App </ProjectName>
             <WrapperTechnologiesGithub>
               <TechnologiesWrapper>
@@ -264,7 +302,7 @@ const Project = () => {
             </WrapperButtonProject>
           </DesktopText>
         </WrapperTitle>
-        <WrapperProject>
+        <WrapperProject ref={project}>
           <ProjectImage src={projectView} />
         </WrapperProject>
       </WrapperProjectSection>

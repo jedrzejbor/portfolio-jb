@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
 import ManHandUp from '../images/mobileMessages.svg';
@@ -110,12 +112,49 @@ const Creator = styled.p`
 `;
 
 const Contact = () => {
+  const wrapper = useRef(null);
+  const text = useRef(null);
+  const image = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.set([text.current, image.current], { autoAlpha: 0 });
+
+    gsap.fromTo(
+      text.current,
+      { x: 100 },
+      {
+        duration: 1,
+        x: 0,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: wrapper.current,
+          start: 'top 20%',
+          toggleActions: 'restart none none reverse',
+        },
+      },
+    );
+    gsap.fromTo(
+      image.current,
+      { x: -100 },
+      {
+        duration: 1,
+        x: 0,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: wrapper.current,
+          start: 'top 20%',
+          toggleActions: 'restart none none reverse',
+        },
+      },
+    );
+  });
   return (
     <>
       <TriangleBackground left />
-      <Wrapper>
+      <Wrapper ref={wrapper}>
         <WrapperContact>
-          <WrapperText>
+          <WrapperText ref={text}>
             <TopicTitle white>
               <SquareTitle white>Cont</SquareTitle>act
             </TopicTitle>
@@ -127,7 +166,7 @@ const Contact = () => {
             <GrayText>Jędrzej Borakiewicz</GrayText>
             <ButtonCv>DOWNLOAD CV</ButtonCv>
           </WrapperText>
-          <WrapperImage>
+          <WrapperImage ref={image}>
             <ContactImage src={ManHandUp} />
             <Creator>2020 BORAKIEWICZ</Creator>
           </WrapperImage>
