@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import gsap from 'gsap';
 import Button from '../components/atoms/Button/Button';
-import manworking from '../images/man_working.png';
+// import manworking from '../images/man_working.png';
+import ManFreelancer from '../images/manworking.svg';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import TriangleBackground from '../components/atoms/TriangleBackground/TriangleBackground';
 import BarTechnologies from '../components/molecules/BarTechnologies/BarTechnologies';
@@ -14,6 +16,7 @@ const Head = () => {
     width: 100vw;
     background-color: #9815ff;
   `;
+
   const WrapperHead = styled.div`
     height: 100%;
     width: 70%;
@@ -62,9 +65,10 @@ const Head = () => {
   `;
   const ButtonHead = styled(Button)`
     margin: 0 auto;
-    margin-top: 10px;
+    /* margin-top: 10px; */
   `;
   const ImageWrapper = styled.div`
+    /* background-color: red; */
     height: 50%;
     width: 100%;
     display: flex;
@@ -76,43 +80,54 @@ const Head = () => {
   `;
   const ImageMan = styled.img`
     display: block;
-    height: 30vh;
-    width: 30vw;
+    height: 70%;
+    width: 100%;
     margin: 0 auto;
-    @media ${device.mobileM} {
-      height: 32vh;
-      width: 32vw;
-    }
-    @media ${device.tablet} {
-      height: 34vh;
-      width: 34vw;
-    }
     @media ${device.laptop} and (orientation: landscape) {
       height: 40vh;
-      width: 15vw;
+      width: 30vw;
     }
     @media ${device.desktop} {
       height: 30vh;
-      width: 10vw;
+      width: 30vw;
     }
   `;
+
+  const square = useRef(null);
+  const image = useRef(null);
+  const button = useRef(null);
+
+  useEffect(() => {
+    gsap.set([button.current, square.current, image.current], { autoAlpha: 0 });
+    const tl = gsap.timeline();
+    // const tlImage = gsap.timeline();
+    // const tlButton = gsap.timeline();
+
+    tl.fromTo(square.current, { y: -100 }, { duration: 0.5, y: 0, autoAlpha: 1 })
+      .fromTo(image.current, { y: 100 }, { duration: 0.5, y: 0, autoAlpha: 1 })
+      .fromTo(button.current, { y: 100 }, { duration: 0.5, y: 0, autoAlpha: 1 })
+      .delay(3.5);
+  });
+
   return (
     <>
       <Wrapper>
         <WrapperHead>
           <TextWrapper>
-            <TextHead>
+            <TextHead ref={square}>
               <SquareTitle white>
                 Hi, <br />
                 I’m Jędrzej
-              </SquareTitle>{' '}
-              Borakiewicz, web developer.{' '}
+              </SquareTitle>
+              Borakiewicz, web developer.
             </TextHead>
             <BarTechnologies />
-            <ButtonHead>About</ButtonHead>
+            <ButtonHead ref={button}>About</ButtonHead>
           </TextWrapper>
           <ImageWrapper>
-            <ImageMan src={manworking} alt="man working on laptop" />
+            <ImageMan ref={image} src={ManFreelancer} alt="man working on laptop" />
+            {/* <ImageMan src={manworking} alt="man working on laptop" /> */}
+            {/* <ManFreelancer /> */}
           </ImageWrapper>
         </WrapperHead>
       </Wrapper>

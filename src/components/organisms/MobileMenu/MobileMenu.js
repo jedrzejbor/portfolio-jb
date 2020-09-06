@@ -19,6 +19,7 @@ const MobileMenu = () => {
     }
     @media ${device.laptop} {
       opacity: 0;
+      display: none;
     }
   `;
 

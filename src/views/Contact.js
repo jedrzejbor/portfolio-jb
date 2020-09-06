@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import Button from '../components/atoms/Button/Button';
-import ManHandUp from '../images/man_hand_up.png';
+import ManHandUp from '../images/mobileMessages.svg';
 import { device } from '../theme/deviceSize';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import TriangleBackground from '../components/atoms/TriangleBackground/TriangleBackground';
@@ -92,17 +92,12 @@ const WrapperImage = styled.div`
 `;
 
 const ContactImage = styled.img`
-  height: 30vh;
-  width: 30vw;
-  @media ${device.tablet} {
-    height: 36vh;
-    width: 36vw;
-    margin-bottom: 6vh;
-  }
+  height: 70%;
+  width: 100%;
   @media ${device.laptop} {
     margin-bottom: 0;
     height: 40vh;
-    width: 15vw;
+    width: 30vw;
   }
 `;
 

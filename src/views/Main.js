@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 import styled from 'styled-components';
 import MobileMenu from '../components/organisms/MobileMenu/MobileMenu';
 import DesktopMenu from '../components/organisms/DesktopMenu/DesktopMenu';
@@ -16,6 +17,21 @@ const Main = () => {
     width: 100vw;
     overflow-x: hidden;
   `;
+  const FirstScreen = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #9815ff;
+    z-index: 99999;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
+
+  const Name = styled.h2``;
   const HamburgerWrapper = styled.div`
     position: fixed;
     top: 0;
@@ -82,12 +98,29 @@ const Main = () => {
     }
   `;
 
+  const logo = useRef(null);
+  const screen = useRef(null);
+  const name = useRef(null);
+
+  useEffect(() => {
+    window.moveTo(0, 0);
+    gsap.set([logo.current, name.current], { autoAlpha: 0 });
+    const tl = gsap.timeline();
+
+    tl.delay(0.5)
+      .fromTo(name.current, { y: 100, autoAlpha: 0 }, { duration: 1.5, y: 0, autoAlpha: 1 })
+      .fromTo(screen.current, { x: 0 }, { duration: 2, x: '100%' })
+      .fromTo(logo.current, { y: -100 }, { duration: 1.5, y: 0, autoAlpha: 1 });
+  });
   return (
     <Wrapper>
+      <FirstScreen ref={screen}>
+        <Name ref={name}>JEDRZEJ BORAKIEWICZ</Name>
+      </FirstScreen>
       <LinkedinLogo />
       <GithubLogo />
       <HamburgerWrapper>
-        <HamburgerLogo>
+        <HamburgerLogo ref={logo}>
           <BlueLogo>JEDRZEJ</BlueLogo> BORAKIEWICZ
         </HamburgerLogo>
         <DesktopMenu />

@@ -4,20 +4,18 @@ import {
 } from '../../../theme/deviceSize';
 
 const Button = styled.button `
-  /* border: 1px solid #9815FF; */
   border: 1px solid white;
   height: 30px;
   width: 150px;
   border-radius: 10px;
   background-color: transparent;
-  /* color: #9815FF; */
   color: white;
-  transition: .3s;
-  font-weight:bold;
+  transition: background-color color .3s;
+  /* font-weight:bold; */
 
   &:hover {
-    background-color: #9815FF;
-    color: #FFF;
+    background-color: #FFF;
+    color: #9815FF;
   }
 
   @media ${device.tablet} {
@@ -28,11 +26,10 @@ const Button = styled.button `
   @media ${device.laptop} {
       height: 40px;
       width: 200px;
-      /* font-size:2rem; */
     }
     @media ${device.laptopL} {
-      height:50px;
-      width:300px;
+      height:40px;
+      width:250px;
     }
     
 `;

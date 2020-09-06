@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import ManSimple from '../images/Man_simple.svg';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import ManSimple from '../images/mobileLife.svg';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import { device } from '../theme/deviceSize';
@@ -86,36 +88,85 @@ const About = () => {
   `;
   const ImageMan = styled.img`
     display: block;
-    height: 30vh;
-    width: 30vw;
+    height: 70%;
+    width: 100%;
     margin: 0 auto;
-    @media ${device.mobileM} {
-      height: 32vh;
-      width: 32vw;
-    }
-    @media ${device.tablet} {
-      height: 34vh;
-      width: 34vw;
-    }
+
     @media ${device.laptop} {
       height: 40vh;
-      width: 15vw;
+      width: 30vw;
     }
     @media ${device.desktop} {
       height: 30vh;
-      width: 10vw;
+      width: 30vw;
     }
   `;
 
+  const title = useRef(null);
+  const text = useRef(null);
+  const wrapper = useRef(null);
+  const image = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.set([text.current, image.current, title.current], { autoAlpha: 0 });
+
+    gsap.fromTo(
+      [title.current, text.current],
+      { x: 100 },
+      {
+        duration: 1,
+        x: 0,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: wrapper.current,
+          start: 'top 20%',
+          markers: 'true',
+          toggleActions: 'restart none none reverse',
+        },
+      },
+    );
+    // gsap.fromTo(
+    //   text.current,
+    //   { x: 100 },
+    //   {
+    //     duration: 1,
+    //     x: 0,
+    //     autoAlpha: 1,
+    //     scrollTrigger: {
+    //       trigger: wrapper.current,
+    //       start: 'top 20%',
+    //       markers: 'true',
+    //       toggleActions: 'restart none none reverse',
+    //     },
+    //   },
+    // );
+    gsap.fromTo(
+      image.current,
+      { x: -100 },
+      {
+        duration: 1,
+        x: 0,
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: wrapper.current,
+          start: 'top 20%',
+          markers: 'true',
+          toggleActions: 'restart none none reverse',
+        },
+      },
+    );
+  });
+
   return (
-    <Wrapper>
+    <Wrapper ref={wrapper}>
       <WrapperAbout>
         <WrapperText>
           <DesktopText>
-            <TopicTitle>
+            <TopicTitle ref={title}>
               <SquareTitle>Abo</SquareTitle>ut
             </TopicTitle>
-            <Text>
+            <Text ref={text}>
               Hi, I am 22 years old student of informatics specialization front-end developer. My
               hobby is programing, car and race. In my projects I use HTML, CSS, JS, React and I
               started learn Node JS.
@@ -125,7 +176,7 @@ const About = () => {
         </WrapperText>
         <WrapperImage>
           {/* <ImageMan src={manStanding} alt="man standing" /> */}
-          <ImageMan src={ManSimple} alt="man standing" />
+          <ImageMan ref={image} src={ManSimple} alt="man standing" />
         </WrapperImage>
       </WrapperAbout>
     </Wrapper>
