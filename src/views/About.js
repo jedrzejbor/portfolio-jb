@@ -143,7 +143,7 @@ const About = () => {
   });
 
   return (
-    <Wrapper ref={wrapper}>
+    <Wrapper id="about-section" ref={wrapper}>
       <WrapperAbout>
         <WrapperText>
           <DesktopText>

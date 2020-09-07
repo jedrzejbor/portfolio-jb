@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle `
   -moz-osx-font-smoothing: grayscale;
   margin:0;
   padding:0;
+  scroll-behavior:smooth;
 }
 html {
   font-size:62.5%;

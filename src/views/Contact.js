@@ -152,7 +152,7 @@ const Contact = () => {
   return (
     <>
       <TriangleBackground left />
-      <Wrapper ref={wrapper}>
+      <Wrapper id="contact-section" ref={wrapper}>
         <WrapperContact>
           <WrapperText ref={text}>
             <TopicTitle white>

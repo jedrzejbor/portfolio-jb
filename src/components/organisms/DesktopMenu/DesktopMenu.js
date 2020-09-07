@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import gsap from 'gsap';
 import { device } from '../../../theme/deviceSize';
 
-const DesktopMenu = () => {
+const DesktopMenu = ({ aboutSection }) => {
   const MenuWrapper = styled.div`
     float: right;
     opacity: 0;
@@ -29,6 +29,10 @@ const DesktopMenu = () => {
       color: blue;
     }
   `;
+  const MenuText = styled.a`
+    color: black;
+    text-decoration: none;
+  `;
 
   const home = useRef(null);
   const about = useRef(null);
@@ -49,10 +53,18 @@ const DesktopMenu = () => {
     <>
       <MenuWrapper>
         <MenuList>
-          <MenuItem ref={home}>Home</MenuItem>
-          <MenuItem ref={about}>About</MenuItem>
-          <MenuItem ref={projects}>Projects</MenuItem>
-          <MenuItem ref={contact}>Contact</MenuItem>
+          <MenuItem id="home" ref={home}>
+            <MenuText href="#home-section">Home</MenuText>
+          </MenuItem>
+          <MenuItem id="aboutList" ref={about}>
+            <MenuText href="#about-section">About</MenuText>
+          </MenuItem>
+          <MenuItem id="projects" ref={projects}>
+            <MenuText href="#projects-section">Projects</MenuText>
+          </MenuItem>
+          <MenuItem id="contact" ref={contact}>
+            <MenuText href="#contact-section">Contact</MenuText>
+          </MenuItem>
         </MenuList>
       </MenuWrapper>
     </>

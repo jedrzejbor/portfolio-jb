@@ -111,7 +111,7 @@ const Head = () => {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper id="home-section">
         <WrapperHead>
           <TextWrapper>
             <TextHead ref={square}>

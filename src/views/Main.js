@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import styled from 'styled-components';
 import MobileMenu from '../components/organisms/MobileMenu/MobileMenu';
@@ -101,9 +101,9 @@ const Main = () => {
   const logo = useRef(null);
   const screen = useRef(null);
   const name = useRef(null);
+  const menu = useRef(null);
 
   useEffect(() => {
-    window.moveTo(0, 0);
     gsap.set([logo.current, name.current], { autoAlpha: 0 });
     const tl = gsap.timeline();
 
@@ -118,12 +118,13 @@ const Main = () => {
         <Name ref={name}>JEDRZEJ BORAKIEWICZ</Name>
       </FirstScreen>
       <LinkedinLogo />
+
       <GithubLogo />
-      <HamburgerWrapper>
+      <HamburgerWrapper ref={menu}>
         <HamburgerLogo ref={logo}>
           <BlueLogo>JEDRZEJ</BlueLogo> BORAKIEWICZ
         </HamburgerLogo>
-        <DesktopMenu />
+        <DesktopMenu aboutSection />
         <MobileMenu />
       </HamburgerWrapper>
       <Head />

@@ -272,7 +272,7 @@ const Project = () => {
   });
 
   return (
-    <Wrapper ref={wrapper}>
+    <Wrapper id="projects-section" ref={wrapper}>
       <WrapperProjectSection>
         <WrapperTitle ref={title}>
           <DesktopText>
