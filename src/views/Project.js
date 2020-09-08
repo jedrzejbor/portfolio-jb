@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import projectView from '../images/project.png';
+// import projectView from '../images/whetherApp.png';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import { device } from '../theme/deviceSize';
 import LeftArrow from '../images/left_arrow.png';
@@ -52,6 +53,7 @@ const DesktopText = styled.div`
 `;
 
 const WrapperProject = styled.div`
+  position: relative;
   height: 50vh;
   width: 100%;
   margin: 0 auto;
@@ -76,8 +78,11 @@ const ProjectImage = styled.img`
     width: 35vh;
   }
   @media ${device.laptopL} {
-    height: 45vh;
-    width: 50vh;
+    /* height: 45vh; */
+    /* width: 50vh; */
+    height: 80%;
+    width: 80%;
+    /* border-radius: 50px; */
   }
 `;
 const ProjectName = styled.h3`
