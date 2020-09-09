@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import styled from 'styled-components';
 import MobileMenu from '../components/organisms/MobileMenu/MobileMenu';
@@ -104,6 +104,7 @@ const Main = () => {
   const menu = useRef(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     gsap.set([logo.current, name.current], { autoAlpha: 0 });
     const tl = gsap.timeline();
 

@@ -1,14 +1,38 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import projectView from '../images/project.png';
-// import projectView from '../images/whetherApp.png';
+// import projectView from '../images/project.png';
+import projectView from '../images/WheatherApp2.png';
 import TopicTitle from '../components/atoms/TopicTitle/TopicTitle';
 import { device } from '../theme/deviceSize';
 import LeftArrow from '../images/left_arrow.png';
 import RightArrow from '../images/right_arrow.png';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
+
+const projects = [
+  {
+    id: 0,
+    number: '01.',
+    title: 'Weather App',
+    technologies: 'React, OpenWeatherApi',
+    github: 'https://github.com/jedrzejbor',
+  },
+  {
+    id: 1,
+    number: '02.',
+    title: 'Kolko i krzyzyk',
+    technologies: 'React, OpenWeatherApi',
+    github: 'https://github.com/jedrzejbor',
+  },
+  {
+    id: 2,
+    number: '03.',
+    title: 'rock paper cut',
+    technologies: 'React, OpenWeatherApi',
+    github: 'https://github.com/jedrzejbor',
+  },
+];
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -75,7 +99,7 @@ const ProjectImage = styled.img`
   }
   @media ${device.laptop} {
     height: 35vh;
-    width: 35vh;
+    width: 35vw;
   }
   @media ${device.laptopL} {
     /* height: 45vh; */
@@ -239,16 +263,22 @@ const ButtonArrow = styled.span`
 `;
 
 const Project = () => {
+  const [numberProject, setNumberProject] = useState(0);
   const title = useRef(null);
   const project = useRef(null);
   const wrapper = useRef(null);
-
+  const FindProject = (element) => {
+    return element.id === numberProject;
+  };
   useEffect(() => {
+    // console.log(numberProject);
+    // const Project = projects.find(FindProject);
+    // console.log(Project.number);
     gsap.registerPlugin(ScrollTrigger);
     gsap.set([title.current, project.current], { autoAlpha: 0 });
     gsap.fromTo(
       title.current,
-      { x: 100 },
+      { x: -100 },
       {
         duration: 1,
         x: 0,
@@ -262,7 +292,7 @@ const Project = () => {
     );
     gsap.fromTo(
       project.current,
-      { x: -100 },
+      { x: 100 },
       {
         duration: 1,
         x: 0,
@@ -275,7 +305,8 @@ const Project = () => {
       },
     );
   });
-
+  const Project = projects.find(FindProject);
+  console.log(projects.length);
   return (
     <Wrapper id="projects-section" ref={wrapper}>
       <WrapperProjectSection>
@@ -284,22 +315,40 @@ const Project = () => {
             <TopicTitle>
               <SquareTitle>Proj</SquareTitle>ects
             </TopicTitle>
-            <ProjectName> 01. Weather App </ProjectName>
+            <ProjectName>
+              {Project.number} {Project.title}
+            </ProjectName>
             <WrapperTechnologiesGithub>
               <TechnologiesWrapper>
-                <TextBig> Technologies </TextBig> <TextLow> React, OpenWeatherApi </TextLow>
+                <TextBig> Technologies </TextBig> <TextLow> {Project.technologies} </TextLow>
               </TechnologiesWrapper>
               <Line />
               <GithubWrapper>
-                <TextBig> Github </TextBig> <Link href="https://github.com/jedrzejbor"> Link </Link>
+                <TextBig> Github </TextBig> <Link href={Project.github}> Link </Link>
               </GithubWrapper>
             </WrapperTechnologiesGithub>
             <WrapperButtonProject>
               <div>
-                <ButtonProject>
+                <ButtonProject
+                  onClick={() => {
+                    if (numberProject === 0) {
+                      return setNumberProject(numberProject + projects.length - 1);
+                    } else {
+                      return setNumberProject(numberProject - 1);
+                    }
+                  }}
+                >
                   <ButtonArrow arrow={LeftArrow} />
                 </ButtonProject>
-                <ButtonProject>
+                <ButtonProject
+                  onClick={() => {
+                    if (numberProject === projects.length - 1) {
+                      return setNumberProject(numberProject - projects.length + 1);
+                    } else {
+                      return setNumberProject(numberProject + 1);
+                    }
+                  }}
+                >
                   <ButtonArrow arrow={RightArrow} />
                 </ButtonProject>
               </div>

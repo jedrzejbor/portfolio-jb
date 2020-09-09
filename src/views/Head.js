@@ -122,7 +122,9 @@ const Head = () => {
               Borakiewicz, web developer.
             </TextHead>
             <BarTechnologies />
-            <ButtonHead ref={button}>About</ButtonHead>
+            <ButtonHead href="#about-section" ref={button}>
+              About
+            </ButtonHead>
           </TextWrapper>
           <ImageWrapper>
             <ImageMan ref={image} src={ManFreelancer} alt="man working on laptop" />

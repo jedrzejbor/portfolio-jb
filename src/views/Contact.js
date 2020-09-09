@@ -8,6 +8,7 @@ import ManHandUp from '../images/mobileMessages.svg';
 import { device } from '../theme/deviceSize';
 import SquareTitle from '../components/atoms/SquareTitle/SquareTitle';
 import TriangleBackground from '../components/atoms/TriangleBackground/TriangleBackground';
+import Icons8 from '../images/icons8.png';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -21,6 +22,7 @@ const Wrapper = styled.div`
 `;
 
 const WrapperContact = styled.div`
+  position: relative;
   height: 100%;
   width: 80%;
   max-width: 1440px;
@@ -72,7 +74,7 @@ const GrayText = styled.p`
 `;
 
 const ButtonCv = styled(Button)`
-  display: block;
+  /* display: block; */
   margin: 10px auto;
   @media ${device.laptop} {
     margin: 0;
@@ -80,7 +82,6 @@ const ButtonCv = styled(Button)`
 `;
 
 const WrapperImage = styled.div`
-  position: relative;
   height: 50vh;
   width: 100%;
   margin: 0 auto;
@@ -106,9 +107,38 @@ const ContactImage = styled.img`
 const Creator = styled.p`
   position: absolute;
   bottom: 20px;
-  right: -5vw;
+  right: 30px;
   font-size: 0.8rem;
-  color: #828282;
+  font-weight: bold;
+  color: white;
+  z-index: 55;
+  @media ${device.laptop} {
+    font-size: 1rem;
+    right: 50px;
+  }
+`;
+const Icons = styled.a`
+  /* display: block; */
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  bottom: 17px;
+  right: 0px;
+  z-index: 550;
+  background-image: url(${Icons8});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media ${device.laptop} {
+    height: 20px;
+    width: 20px;
+    bottom: 15px;
+  }
+  @media ${device.laptopL} {
+    height: 25px;
+    width: 25px;
+    bottom: 15px;
+  }
 `;
 
 const Contact = () => {
@@ -164,12 +194,15 @@ const Contact = () => {
             <GrayText>jedbor</GrayText>
             <TopicContact>LINKEDIN</TopicContact>
             <GrayText>Jędrzej Borakiewicz</GrayText>
-            <ButtonCv>DOWNLOAD CV</ButtonCv>
+            <ButtonCv href="https://drive.google.com/file/d/11fg3L-jMxYyqj3B-_SpW0lh-aVNO3CkN/view?usp=sharing">
+              WATCH CV
+            </ButtonCv>
           </WrapperText>
           <WrapperImage ref={image}>
             <ContactImage src={ManHandUp} />
-            <Creator>2020 BORAKIEWICZ</Creator>
           </WrapperImage>
+          <Creator> &#169; 2020 BORAKIEWICZ</Creator>
+          <Icons href="https://icons8.com/" />
         </WrapperContact>
       </Wrapper>
     </>
