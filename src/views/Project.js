@@ -264,6 +264,7 @@ const ButtonArrow = styled.span`
 
 const Project = () => {
   const [numberProject, setNumberProject] = useState(0);
+  const [animation, setAnimation] = useState(false);
   const title = useRef(null);
   const project = useRef(null);
   const wrapper = useRef(null);
@@ -271,16 +272,13 @@ const Project = () => {
     return element.id === numberProject;
   };
   useEffect(() => {
-    // console.log(numberProject);
-    // const Project = projects.find(FindProject);
-    // console.log(Project.number);
     gsap.registerPlugin(ScrollTrigger);
     gsap.set([title.current, project.current], { autoAlpha: 0 });
     gsap.fromTo(
       title.current,
-      { x: -100 },
+      { x: -500 },
       {
-        duration: 1,
+        duration: 1.5,
         x: 0,
         autoAlpha: 1,
         scrollTrigger: {
@@ -292,9 +290,9 @@ const Project = () => {
     );
     gsap.fromTo(
       project.current,
-      { x: 100 },
+      { x: 500 },
       {
-        duration: 1,
+        duration: 1.5,
         x: 0,
         autoAlpha: 1,
         scrollTrigger: {
@@ -306,7 +304,6 @@ const Project = () => {
     );
   });
   const Project = projects.find(FindProject);
-  console.log(projects.length);
   return (
     <Wrapper id="projects-section" ref={wrapper}>
       <WrapperProjectSection>
@@ -331,6 +328,24 @@ const Project = () => {
               <div>
                 <ButtonProject
                   onClick={() => {
+                    gsap.fromTo(
+                      title.current,
+                      { x: -500 },
+                      {
+                        duration: 1.5,
+                        x: 0,
+                        autoAlpha: 1,
+                      },
+                    );
+                    gsap.fromTo(
+                      project.current,
+                      { x: -500 },
+                      {
+                        duration: 1.5,
+                        x: 0,
+                        autoAlpha: 1,
+                      },
+                    );
                     if (numberProject === 0) {
                       return setNumberProject(numberProject + projects.length - 1);
                     } else {
@@ -342,6 +357,24 @@ const Project = () => {
                 </ButtonProject>
                 <ButtonProject
                   onClick={() => {
+                    gsap.fromTo(
+                      title.current,
+                      { x: 500 },
+                      {
+                        duration: 1.5,
+                        x: 0,
+                        autoAlpha: 1,
+                      },
+                    );
+                    gsap.fromTo(
+                      project.current,
+                      { x: 500 },
+                      {
+                        duration: 1,
+                        x: 0,
+                        autoAlpha: 1,
+                      },
+                    );
                     if (numberProject === projects.length - 1) {
                       return setNumberProject(numberProject - projects.length + 1);
                     } else {
